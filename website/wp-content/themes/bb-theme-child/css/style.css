@@ -1,0 +1,857 @@
+/***************
+    
+    High Noon Main Styles
+    2025 - Loop: Design for Social Good
+    https://weareloop.com/
+ 
+    This file contains the main styles for the High Noon theme.
+    It includes global variables, typography, and other styles.
+ 
+    @package High Noon Theme
+    @version 1.0.0
+
+***************/
+
+
+
+
+/********************/
+/* Global Variables */
+/********************/
+:root {
+     /* SIZING UNITS */
+     --Sizing-Units-L: 66px;
+     --Sizing-Units-M: 44px;
+     --Sizing-Units-S: 36px;
+     --Sizing-Units-XS: 26px;
+     --Sizing-Units-2XS: 16px;
+     --Sizing-Units-3XS: 8px;
+     --Number-Scale-Margins-Desktop: 72px;
+     --Number-Scale-Margins-Small-Desktop: 60px;
+     --Number-Scale-Margins-Tablet: 36px;
+     --Number-Scale-Margins-Mobile: 18px;
+
+     /* BORDER RADII */
+    --border-radius-btn: 50px;
+    --border-radius-btn-mobile: var(--border-radius-btn);
+    --border-radius-img: 24px;
+    --border-radius-img-mobile: 16px;
+
+    /* CONTENT PADDING */
+    --content-padding: 72px;
+    --content-margin-top: 26px;
+    --content-padding-top: 200px;
+    --content-padding-bottom: 50px;
+    
+    /* COLORS */
+    --black: #000;
+    --white: #fff;
+    --gray: #aaa;
+    --light: #ddd;
+    
+    --color1: #025C6E;
+    --color2: #C8EFE8;
+    
+
+    /* FONTS */
+    --font-headline: 'Barlow',sans-serif;
+    --font-content: 'Barlow',sans-serif;
+
+    /* ICONS */
+    --arrow-white: url(/wp-content/uploads/arrow-right-white.svg);
+    --arrow-blue:  url(/wp-content/uploads/arrow-right-blue.svg);
+
+    --arrow: url(/wp-content/uploads/arrow.svg);
+    --arrow-diagonal: url(/wp-content/uploads/arrow-diagonal.svg);
+    --caret: url(/wp-content/uploads/caret.svg);
+    --minus: url(/wp-content/uploads/action-minus.svg);
+    --plus: url(/wp-content/uploads/action-plus.svg);
+
+    --viewportWidth: calc(100vw - var(--scrollbarWidth));
+}
+/************************************/
+/*  START :: BB Editor & Assistant  */
+/************************************/
+
+/* hide Assistant Pro plugin floating pencil icon  */
+.fl-asst-plugin {
+    /* display: none; */
+}
+/* add space so first row can be edited, controls aren't hidden behind nav */
+.fl-builder-edit .fl-builder-content {
+    padding-top: 145px;
+}
+/* remove strange 4px inset of editor overlay */
+.fl-builder-edit .fl-inline-editor {
+    bottom: -4px;
+    left: -4px;
+    right: -4px;
+}
+/* reset BB edit overlay so actions panels are at correct position */
+.fl-builder-edit .fl-drop-target,
+.fl-builder-edit .fl-block-overlay,
+.fl-builder-edit .fl-inline-editor {
+    background-color: transparent !important;
+    margin-top: 0;
+    padding-top: 0;
+}
+/* prevent BB from changing color of action icons in BB overlay when colors of parent columns are set */
+.fl-builder-edit .fl-block-overlay-actions svg path,
+.fl-builder-edit .fl-block-overlay-actions i {
+    color: #fff !important;
+}
+/* adds missing eye icon for bb visibility functionality */
+.fa-eye:before {
+    content: url(/wp-content/uploads/fa-eye.svg);
+}
+/************************************/
+/*  END   :: BB Editor & Assistant  */
+/************************************/
+
+/**********************/
+/* Framework Settings */
+/**********************/
+html, body { 
+    color: var(--black);
+    font-family: var(--font-content);
+    font-size: inherit; /* to reset to browser default of 16px for accessibility */
+    overflow-x: clip; /* instead of hidden, which glitches out position: sticky elements */
+}
+
+.fl-page-content {
+    padding-top:var(--content-padding-top);
+    padding-bottom:var(--content-padding-bottom);
+}
+
+.fl-row:not(.nopadding) >.fl-row-content-wrap >.fl-row-content {
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
+}
+/* sets padding default for all rows, can be overridden individually in BB */
+.fl-row > div {
+    padding-top: var(--Sizing-Units-L);
+    padding-bottom: var(--Sizing-Units-L);
+}
+/* sets margin default for all rich text, can be overridden individually in BB */
+.fl-module-rich-text > div, /* old bb markup */
+.fl-module-rich-text:not(:has( > div))/* new bb markup */,
+.fl-builder-edit .fl-module-rich-text:not(:has( > div:not(.fl-module-overlay)))/* prevents buggy margin jump when in editor */ {
+    margin-top: var(--Sizing-Units-XS);
+}
+/* sets margin default for all buttons, can be overridden individually in BB */
+.fl-module-button > div, /* old bb markup */
+.fl-module-button:not(:has( > div)), /* new bb markup */
+.fl-builder-edit .fl-module-button:not(:has( > div:not(.fl-module-overlay))), /* old bb markup :: prevents buggy margin jump when in editor */
+.fl-builder-edit .fl-module-button:has( > div.fl-inline-editor), /* new bb markup ::prevents buggy margin jump when in editor */
+.fl-module-button-group:not(.anchorlinks) > div{
+    margin-top: var(--Sizing-Units-S);
+}
+/* sets padding default for all buttons in button groups, can be overridden individually in BB */
+.fl-module-button-group .fl-button-group-buttons > div {
+    padding-top: var(--Sizing-Units-S); /* "Button Spacing" in BB button groups uses padding instead of margin */
+}
+/* resets padding default for first button in button groups */
+.fl-module-button-group .fl-button-group-buttons > div:first-of-type {
+    padding-top: 0; /* "Button Spacing" in BB button groups uses padding instead of margin */
+}
+/* resets margin default for all button groups, since padding is handled by each button in group */
+div:first-of-type.fl-module-button-group > div {
+    margin-top: 0;
+}
+
+/* Focus state */
+body:not(.fl-builder-edit) :focus {
+    outline-width: 2px;
+    outline-style: auto;
+    outline-offset: 5px;
+    outline-color: var(--color1);
+    border-radius: 0;
+}
+
+body:not(.fl-builder-edit) .hidefocus:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+button[aria-label="Assistant"] {display:none !important;}
+
+/* Tablet */
+@media only screen and (max-width: 992px) {
+    .fl-row > div {
+        padding-top: var(--Sizing-Units-M);
+        padding-bottom: var(--Sizing-Units-M);
+    }
+}
+/* Mobile */
+@media only screen and (max-width: 768px) {
+    .fl-row > div {
+        padding-top: var(--Sizing-Units-S);
+        padding-bottom: var(--Sizing-Units-S);
+    }
+    /* sets margin default for all rich text, can be overridden individually in BB */
+    .fl-module-rich-text > div, /* old bb markup */
+    .fl-module-rich-text:not(:has( > div))/* new bb markup */,
+    .fl-builder-edit .fl-module-rich-text:not(:has( > div:not(.fl-module-overlay)))/* prevents buggy margin jump when in editor */ {
+        margin-top: var(--Sizing-Units-2XS);
+    }
+    /* sets margin default for all buttons, can be overridden individually in BB */
+    .fl-module-button > div, /* old bb markup */
+    .fl-module-button:not(:has( > div)), /* new bb markup */
+    .fl-builder-edit .fl-module-button:not(:has( > div:not(.fl-module-overlay))), /* old bb markup :: prevents buggy margin jump when in editor */
+    .fl-builder-edit .fl-module-button:has( > div.fl-inline-editor), /* new bb markup ::prevents buggy margin jump when in editor */
+    .fl-module-button-group:not(.anchorlinks) > div{
+        margin-top: var(--Sizing-Units-XS);
+    }
+}
+/**************/
+/* Typography */
+/**************/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    color: var(--black);   
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h1, .h1, .h1 p, .h1 .fl-heading {
+    font-family: var(--font-headline);
+    font-size: 88px;
+    font-size: 5.5rem;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 88px;
+    line-height: 5.5rem;
+}
+
+h2, .h2, .h2 p, .h2 .fl-heading {
+    font-family: var(--font-headline);
+    font-size: 56px;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 56px;
+    line-height: 3.5rem;
+    letter-spacing: 0;
+}
+
+h3, .h3, .h3 p, .h3 .fl-heading {
+    font-family: var(--font-content);
+    font-weight: 700;
+    font-size: 36px;
+    font-size: 2.25rem;
+    line-height: 42px; 
+    line-height: 2.63rem; 
+}
+
+h4, .h4, .h4 p, .h4 .fl-heading {
+    font-family: var(--font-content);
+    font-weight: 700;
+    font-size: 26px;
+    font-size: 1.63rem;
+    line-height: 34px;
+    line-height: 2.13rem;
+}
+
+h5, .h5, .h5 p, .h5 .fl-heading {
+    font-family: var(--font-content);
+    font-weight: 700;
+    font-size: 22px;
+    font-size: 1.38rem;
+    line-height: 34px;
+    line-height: 2.13rem;
+}
+
+p, .p, ul, ol {
+    font-family: var(--font-content);
+    font-size: 18px;
+    font-size: 1.13rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px; 
+    line-height: 1.81rem;
+    margin: 0;
+    text-wrap: pretty;
+}
+
+p + p, p + ul, p + ol,
+p + blockquote, blockquote + p,
+ul + p, ul + ul, ul + ol,
+ol + p, ol + ul, ol + ol { 
+    margin-top: var(--content-margin-top);
+}
+
+.large, p.large, p .large, .large p,
+.large ol, ol.large, .large ul, ul.large {
+    font-family: var(--font-content);
+    font-size: 22px;
+    font-size: 1.38rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px; 
+    line-height: 2.13rem; 
+}
+
+.small, p.small, p .small, .small p,
+.small ol, ol.small, .small ul, ul.small {
+    font-family: var(--font-content);
+    font-size: 16px;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; 
+    line-height: 1.75rem; 
+}
+
+blockquote p {
+    font-family: var(--font-content);
+    font-size: 25px;
+    font-size: 1.56rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 37px;
+    line-height: 2.31rem;
+}
+
+blockquote {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+p a:not(.underline_anim), 
+ol a:not(.underline_anim), 
+ul a:not(.underline_anim) {
+    color: currentColor;
+    position: relative;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 100% 1px;
+    transition: background-size 250ms ease-in-out;
+    display:inline;
+    font-weight:700;
+}
+
+p a:not(.underline_anim):hover, 
+ol a:not(.underline_anim):hover, 
+ul a:not(.underline_anim):hover {
+    color: currentColor;
+    text-decoration: none;
+    animation: 0.25s underline;
+}
+
+ul, ol {
+    padding-inline-start: 21px;
+}
+
+/* .fl-rich-text a, */
+a.underline_anim,
+span.underline_anim,
+.fl-module-button.underline_anim  a.fl-button, 
+.fl-module-button-group.underline_anim a.fl-button {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 100% 1px;
+    display:inline;
+    /* transition: background-size 250ms ease-in-out; */
+    text-decoration: none;
+}
+
+p a:not(.underline_anim):hover,
+a.underline_anim:hover,
+span.underline_anim:hover,
+.fl-module-button.underline_anim a.fl-button:hover, 
+.fl-module-button-group.underline_anim a.fl-button:hover {
+    animation: 0.25s underline;
+}
+
+
+
+
+@keyframes underline {
+    from {background-size: 0% 1px;}
+    to {background-size: 100% 1px;}
+}
+
+
+
+/* Number Stat */
+.number_stat .fl-number-string {
+    font-family: var(--font-headline);
+    font-size: 68px;
+    font-size: 4.25rem;
+    line-height: 68px;
+    line-height: 4.25rem;
+    font-style: normal;
+    font-weight: 700;
+}
+
+
+
+
+/******************************/
+/*  START :: Buttons & Links  */
+/******************************/
+
+:root {
+    /* --btn-icon-gap: var(--Sizing-Units-2XS); */
+    --btn-icon-gap: 10px;
+    --btn-icon-gap-hover: 20px;
+}
+
+/* resets bb-theme skin */
+a.fl-button *, a.fl-button:visited * {
+    color: inherit;
+}
+
+/* default styles for all buttons */
+.fl-builder-content .fl-module-button a.fl-button,
+.fl-builder-content .fl-module-button-group a.fl-button,
+div.wpforms-container-full button.wpforms-submit,
+.button-branded {
+    font-family:var(--font-content);
+    font-size: 18px;
+    font-size: 1.13rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* separates styles for buttons with backgrounds */
+.fl-module-button:not(.buttonlink) a.fl-button,
+.button-branded a.fl-button,
+div.wpforms-container-full .wpforms-form button.wpforms-submit,
+a.button-branded { 
+    /* background: none; */
+    padding: 20px 40px;
+    border-radius: var(--border-radius-btn);
+    transition: all .25s ease;
+}
+
+/* sets up buttons with icons */
+a.fl-button span {
+     /* inherit color from a.fl-button */
+    color: inherit;
+    align-items: center;
+    display: inline-flex;
+    gap: var(--btn-icon-gap);
+}
+
+.cta_button a.fl-button {
+    font-family: var(--font-content);
+    font-size: 19px;
+    font-size: 1.19rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding:20px 40px;
+    border-radius: var(--border-radius-btn);
+    border:transparent;
+    transition:all .15s ease;
+}
+
+.cta_button a.fl-button:after {
+    font-family: 'Font Awesome 5 Pro';
+    content:"\f178";
+    font-weight: 500;
+    padding-left: 10px;
+    position: relative;
+    top: 1px;
+    transition:all .25s ease;
+    display:inline-block;
+}
+
+a.uabb-creative-button {transition: all .25s ease;}
+
+/* sets hover state for most buttons */
+.cta_button a.fl-button:hover,
+.cta_button a.fl-button:focus,
+.fl-module-button:not(.buttonlink) a.fl-button:hover,
+.fl-module-button:not(.buttonlink) a.fl-button:focus,
+/* div.wpforms-container-full button.wpforms-submit:hover, */
+a.button-branded:hover,
+a.button-branded:focus {
+    /* transform: scale(1.05); */
+    transform: scale3d(1.05, 1.05, 1.05); /* testing performance of scale on hover */
+}
+
+/* sets default transition for most buttons */
+.fl-module-button a.fl-button::after,
+.fl-module-button a.fl-button,
+.fl-module-button a.fl-button span,
+div.wpforms-container-full button.wpforms-submit {
+    transition: all .25s ease;
+}
+
+/* removes arrow icon */
+.cta_button.noarrow a.fl-button:after {
+    display:none;
+}
+
+/* disabled – the combo of scale + icon padding on hover disrupts the layout flow of sibling containers */
+/* .cta_button a.fl-button:hover:after,
+.cta_button a.fl-button:focus:after {
+    padding-left: var(--btn-icon-gap-hover);
+} */
+
+/* default styles for inline links */
+p a:not(.buttonlink), 
+ol a:not(.buttonlink), 
+ul a:not(.buttonlink) {
+    color: currentColor;
+    position: relative;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 100% 1px;
+    transition: background-size 250ms ease-in-out;
+    display:inline;
+    font-weight: 700;
+}
+
+p a:not(.buttonlink):hover, 
+ol a:not(.buttonlink):hover, 
+ul a:not(.buttonlink):hover {
+    color: currentColor;
+    text-decoration: none;
+    animation: 0.3s underline ease-in;
+}
+
+@keyframes underline {
+    from {background-size: 0% 1px;}
+    to {background-size: 100% 1px;}
+}
+
+/* buttons w icons */
+
+a.buttonlink {
+    font-size: 18px;
+    font-size: 1.13rem;
+    line-height: 28px;
+    line-height: 1.75rem;
+    font-weight: 700;
+}
+
+.fl-builder-content .buttonlink a.fl-button,
+.fl-builder-content a.buttonlink {
+    align-items: center;
+    background-color: inherit;
+    border: none;
+    border-radius: 0;
+    display: inline-flex;
+    /* gap: 12px; */
+    padding: 0;
+    padding-bottom: 2px; /* extra spacing between text and underline */
+    padding-right: var(--btn-icon-gap-hover); /* apply padding as far as the arrow goes, to avoid glitchiness on hover */
+
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: calc(100% - var(--btn-icon-gap)) 1px; /* minus 12px for the icon's rest state */
+    transition: background-size 250ms ease-in-out;
+    display:inline;
+    font-weight:700;
+}
+
+.fl-builder-content .buttonlink a.fl-button span {
+    display: inline-block;
+}
+
+.buttonlink .fl-button-wrap,
+.arrowlink .fl-button-wrap {
+    line-height: 0; /* removes odd extra gap below a */
+}
+
+.fl-builder-content .buttonlink a.fl-button:hover,
+.fl-builder-content a.buttonlink:hover {
+    text-decoration: none;
+    background-size: 100% 1px; /* full 100% for the icon's active state */
+}
+
+a.buttonlink:not(.noarrow)::after,
+.buttonlink:not(.noarrow) a.fl-button span::after {
+    /* sets the gap between the text and icon*/
+    transform: translateX(var(--btn-icon-gap));
+}
+
+a.buttonlink:not(.noarrow):hover::after,
+.buttonlink:not(.noarrow) a.fl-button:hover span::after {
+    /* sets the gap between the text and icon on hover */
+    transform: translateX(var(--btn-icon-gap-hover));
+}
+
+a.buttonlink.arrow_left::before,
+a.buttonlink.arrow_right::after,
+button.buttonlink.arrow_left::before,
+button.buttonlink.arrow_right::after,
+.buttonlink.arrow_left a.fl-button span::before,
+.buttonlink.arrow_right a.fl-button span::after,
+button.wpforms-submit::after {   
+    content:"";
+    background-image: var(--arrow);
+    background-size:contain;
+    background-repeat:no-repeat;
+    height: 13px; /* px won't scale, but rem is glitchy when button is scaled on hover */
+    /* height: 0.79rem; */
+    position: relative;
+    /* top: 5px;
+    top: 0.31rem; */
+    transition: all .25s ease-in-out;;
+    width: 16px;
+    /* width: 1rem; */
+    display: inline-flex;
+    /* transform: translateX(12px); */
+
+    /* version using mask below */
+    /* background-color: currentColor;
+    -webkit-mask: var(--arrow) no-repeat 0% 0%;
+    mask: var(--arrow) no-repeat 0% 0%;
+    -webkit-mask-size: contain;
+    mask-size: contain; */
+}
+
+a.buttonlink.arrow_left::before,
+.buttonlink.arrow_left a.fl-button span::before {
+    /* float: left; */
+    margin-right: var(--btn-icon-gap);
+    /* margin-right: 0.75rem; */
+    transform: scalex(-1);
+}
+
+a.buttonlink.arrow_right::after,
+button.buttonlink.arrow_right::after{
+    float: right;
+    /* margin-left: var(--btn-icon-gap);
+    margin-left: .75rem; */
+}
+
+/* buttons w icons – colors
+Arrow Brown 
+a.arrow_brown.arrow_left::before,
+button.arrow_brown.arrow_left::before,
+a.arrow_brown.arrow_right::after,
+button.arrow_brown.arrow_right::after,
+.arrow_brown.arrow_left a.fl-button span::before,
+.arrow_brown.arrow_right a.fl-button span::after
+{background-image:var(--arrow-dark);}
+
+a.arrow_black.arrow_left::before,
+button.arrow_black.arrow_left::before,
+a.arrow_black.arrow_right::after,
+button.arrow_black.arrow_right::after,
+.arrow_black.arrow_left a.fl-button span::before,
+.arrow_black.arrow_right a.fl-button span::after
+{background-image:var(--arrow-dark-alt);}
+
+Arrow White 
+a.arrow_white.arrow_left::before,
+a.arrow_white.arrow_right::after,
+button.arrow_white.arrow_left::before,
+button.arrow_white.arrow_right::after,
+.arrow_white.arrow_left a.fl-button span::before,
+.arrow_white.arrow_right a.fl-button span::after
+{background-image:var(--arrow-light);} */
+
+
+
+
+
+/**************/
+/**************/
+/* Responsive */
+/**************/
+/**************/
+
+
+/* Desktop */
+@media screen and (max-width: 1366px) {
+
+    
+    /***********************************************/
+    /*  Full Width Breakout honoring wrapper-left  */
+    /***********************************************/
+    /* .fullwidth.marginleft  > div, .fullwidth .marginleft  { padding-left:  calc( (var(--viewportWidth) - (1366px - (var(--content-padding) * 2))) / 2);} */
+    /* .fullwidth.marginright > div, .fullwidth .marginright { padding-right: calc( (var(--viewportWidth) - (1366px - (var(--content-padding) * 2))) / 2);} */
+
+    :root {
+
+        --content-padding: 60px;
+    }
+
+
+    /***********************************************/
+    /*  Full Width Breakout honoring wrapper-left  */
+    /***********************************************/
+    .fullwidth.marginleft >  div, .fullwidth .marginleft  { padding-left:  var(--content-padding);}
+    .fullwidth.marginright > div, .fullwidth .marginright { padding-right: var(--content-padding);} 
+
+
+    /* Number Stat */
+    .number_stat .fl-number-string {
+        font-size: 64px;
+        font-size: 4rem;
+        line-height: 64px;
+        line-height: 4rem;
+    }
+
+
+
+}
+
+  
+/* Tablet */
+@media only screen and (max-width: 992px) {
+
+    :root {
+
+        --content-padding: 36px;
+    }
+
+
+    /**************/
+    /* TYPOGRAPHY */
+    /**************/
+
+    h1, .h1, .h1 p, .h1 .fl-heading {
+        font-size: 66px;
+        font-size: 4.13rem;
+        line-height: 70px;
+        line-height: 4.38rem;
+    }
+
+    h2, .h2, .h2 p, .h2 .fl-heading {
+        font-size: 50px;
+        font-size: 3.13rem;
+        line-height: 50px;
+        line-height: 3.13rem;
+    }
+
+    h3, .h3, .h3 p, .h3 .fl-heading {
+        font-size: 30px;
+        font-size: 1.88rem;
+        line-height: 36px;
+        line-height: 2.25rem;
+    }
+
+    h4, .h4, .h4 p, .h4 .fl-heading {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 30px;
+        line-height: 1.88rem;
+    }
+
+    h5, .h5, .h5 p, .h5 .fl-heading {
+        font-size: 21px;
+        font-size: 1.31rem;
+        line-height: 33px;
+        line-height: 2.06rem;
+    }
+
+    p, .p, ul, ol {
+        font-size: 18px;
+        font-size: 1.13rem;
+        line-height: 29px;
+        line-height: 1.81rem;
+    }
+
+    .large, p.large, p .large, .large p,
+    .large ol, ol.large, .large ul, ul.large {
+        font-size: 21px;
+        font-size: 1.31rem;
+        line-height: 33px;
+        line-height: 2.06rem;
+    }
+
+    .small, p.small, p .small, .small p,
+    .small ol, ol.small, .small ul, ul.small {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 28px;
+        line-height: 1.75rem;
+    }
+
+    blockquote p {
+        font-size: 23px;
+        font-size: 1.44rem;
+        line-height: 33px;
+        line-height: 2.06rem;
+    }
+ 
+
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 768px) {
+
+    :root {
+
+        --content-padding: 18px;
+        --content-padding-top: 16px;
+        --content-padding-bottom: 16px;
+    }
+
+
+    /**************/
+    /* TYPOGRAPHY */
+    /**************/
+
+    h1, .h1, .h1 p, .h1 .fl-heading {
+        font-size: 50px;
+        font-size: 3.13rem;
+        line-height: 50px;
+        line-height: 3.13rem;
+    }
+
+    h2, .h2, .h2 p, .h2 .fl-heading {
+        font-size: 40px;
+        font-size: 2.5rem;
+        line-height: 40px;
+        line-height: 2.5rem;
+    }
+
+    h3, .h3, .h3 p, .h3 .fl-heading {
+        font-size: 28px;
+        font-size: 1.75rem;
+        line-height: 36px;
+        line-height: 2.25rem;
+    }
+
+    h5, .h5, .h5 p, .h5 .fl-heading {
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 31px;
+        line-height: 1.94rem;
+    }
+
+    .large, p.large, p .large, .large p,
+    .large ol, ol.large, .large ul, ul.large {
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 31px;
+        line-height: 1.94rem;
+    }
+
+    blockquote p {
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 29px;
+        line-height: 1.81rem;
+    }
+
+    /* Number Stat */
+    .number_stat .fl-number-string {
+        font-size: 52px;
+        font-size: 3.25rem;
+        line-height: 55px;
+        line-height: 3.44rem;
+    }
+
+
+
+
+}

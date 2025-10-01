@@ -1,0 +1,544 @@
+/********************/
+/********************/
+/** Rows & Modules **/
+/********************/
+
+
+/********************/
+/****  Carousels ****/
+/********************/
+
+/*****************/
+/**** General ****/
+/*****************/
+
+.slick-arrow, .slick-arrow:hover, .slick-arrow:focus{
+    background-color:transparent!important;
+    border:none!important;
+    padding:0;
+}
+.slider-header{
+    display: flex;
+    justify-content: flex-start;
+    gap: 14px;
+}
+body.fl-builder-edit .slider-header:after{
+    content:'[slider buttons and dots shortcode]';
+    font-weight: 900;
+    font-style: italic;
+}
+.slider-ctl{
+    display:flex;
+    gap:14px;
+    justify-content:flex-start;
+}
+ul.slick-dots{
+    margin-bottom:0;
+    padding-inline-start: 0;
+}
+
+.slick-dots li.slick-active {
+    display: block;
+}
+.slick-dots li {
+    display: none;
+    line-height: 1;
+}
+.slick-active button:not(.home-page-tab), 
+.slick-active button:not(.home-page-tab):hover, 
+.slick-active button:not(.home-page-tab):focus {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    font-weight:bold;
+    border: 1px solid transparent;
+    pointer-events: none;
+}
+.slider-dot{
+    display: flex;
+    align-items: center;
+}
+.slick-track{
+    display: flex;
+    align-items: stretch;
+}
+.slick-initialized .slick-slide{
+    height: auto;
+    display: flex !important;
+}
+.slick-slide > div{
+    height:100%;
+    display: flex;
+}
+/************************/
+/**** Featured Image ****/
+/************************/
+.carousel-img,
+.carousel-img .fl-photo-content,
+.carousel-img .fl-photo-content img{
+    width:100%;
+    height:260px;
+    object-fit: cover;
+}
+.action-carousel-slide .cta_button{
+    margin-top: auto!important;
+}
+.img-feature.action-carousel-row .action-carousel-slide{
+    width:394px!important;
+}
+/**********************/
+/**** Taxtinomials ****/
+/**********************/
+.action-carousel-slide{
+    overflow: hidden;
+    width:472px!important;
+    margin:13px;
+    display: flex!important;
+}
+.action-carousel-col .fl-col-content{
+    margin-left:calc(50vw - 683px);
+}
+
+/**********************/
+/**** Logo Marquee ****/
+/**********************/
+
+
+body:not(.fl-builder-edit) .marquee {
+  --gap: 134px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  min-width: 1980px;
+}
+
+body:not(.fl-builder-edit) .marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+}
+
+body.fl-builder-edit .marquee__content {
+    flex-direction: column;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+body:not(.fl-builder-edit) .marquee__content {
+  animation: scroll 30s linear infinite;
+}
+
+.marquee--hover-pause:hover .marquee__content {
+  animation-play-state: paused;
+}
+
+.marquee__content .logo{
+    height:74px;
+    flex-shrink: 0;
+}
+
+.marquee__content .logo.first{
+    padding: 15px 0;
+}
+
+.marquee__content .logo.second{
+    padding: 20px 0;
+}
+
+
+.marquee__content .logo .fl-photo-content,
+.marquee__content .logo img{
+    height:100%;
+    width:auto;
+}
+
+
+
+/******************************/
+/**** overlapping carousel ****/
+/******************************/
+body:not(.fl-builder-edit) .overlap-carousel-row .fl-row-content{
+    display: grid;
+    grid-template-columns: calc(100% - 220px) 220px;
+    grid-template-areas: "info ctl" "slider slider";
+    align-items: end;
+    gap:60px 0;
+}
+.overlap-carousel-row .slider-header{
+    justify-content: flex-end;
+}
+body:not(.fl-builder-edit) .overlap-carousel-row .fl-col-group:nth-child(1){
+    order:1;
+    grid-area: info;
+}
+body:not(.fl-builder-edit) .overlap-carousel-row .fl-col-group:nth-child(3){
+    order:2;
+    grid-area: ctl;
+}
+body:not(.fl-builder-edit) .overlap-carousel-row .fl-col-group:nth-child(2){
+    order:3;
+    grid-area: slider;
+}
+.overlap-carousel-info-col .fl-col-content{
+    align-items: flex-end;
+}
+
+.overlap-carousel-img-col .fl-module-photo,
+.overlap-carousel-img-col .fl-module-photo .fl-photo-content,
+.overlap-carousel-img-col .fl-module-photo .fl-photo-content img{
+    min-height:550px;
+    height:100%;
+    object-fit: cover;
+}
+
+.overlap-carousel-img-col .fl-module-box{
+    min-height:550px;
+    height:100%;
+    object-fit: cover;
+}
+
+body.fl-builder-edit .overlap-carousel-img-col .fl-module[data-accepts].fl-module-highlight{
+    height: 250px;
+    position: relative;
+    margin-top: 30px;
+}
+body.fl-builder-edit .overlap-carousel-img-col{
+    counter-reset: section;
+}
+body.fl-builder-edit .overlap-carousel-img-col .fl-module[data-accepts].fl-module-highlight::before {
+    counter-increment: section;
+    content: "Slide #" counter(section);
+    display: block;
+    position: absolute;
+    top: -27px;
+}
+body.fl-builder-edit .overlap-carousel-info-col .fl-col-content{
+    justify-content: flex-start;
+    padding: 0;
+}
+body.fl-builder-edit .overlap-carousel-info-col .fl-col-content .fl-module-box{
+    max-height: 250px;
+    padding:0;
+    margin-top:30px;
+}
+body.fl-builder-edit .overlap-carousel-info-col .fl-rich-text{
+    overflow: hidden;
+}
+body.fl-builder-edit .overlap-carousel-info-col .fl-heading-text{
+    flex-basis: 48px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.overlap-carousel-info-col .slick-list{
+    width:calc(100% + 160px);
+}
+.fl-col-group-equal-height.fl-col-group-align-center .overlap-carousel-img-col .slick-slider{
+    height: 100%;
+    flex-grow: 1;
+    justify-content: stretch;
+}
+.overlap-carousel-img-col .slick-list,
+.overlap-carousel-img-col .slick-track {
+    height: 100%;
+}
+.overlap-carousel-img-col .slick-slide > div{
+    width:100%;
+}
+.overlap-carousel-info-col .slick-slide{
+    align-items: center;
+}
+.overlap-carousel-info-col .slick-slide > div{
+    display: flex;
+    height:auto;
+}
+.overlap-carousel-info-col .fl-module-box{
+    display: flex!important;
+}
+
+/********************/
+/***Video Carousel***/
+/********************/
+.video-carousel-row .slider-header{
+    padding: 0 !important;
+    gap:16px;
+    justify-content: flex-end;
+}
+body:not(.fl-builder-edit) .fl-col.video-carousel-slide{
+    overflow: visible;
+    padding-bottom:44px;
+    position: relative;
+}
+body:not(.fl-builder-edit) .video-carousel-box{
+    position: absolute;
+    transition: all 0.5s ease;
+    bottom:98px;
+    opacity: 0;
+    width:590px;
+    left:-52.5px
+}
+body:not(.fl-builder-edit) .video-carousel-box .fl-module-modal-popup{
+    flex-shrink: 0;
+    width: auto;
+}
+body:not(.fl-builder-edit) .slick-center .video-carousel-box{
+    opacity: 1;
+    pointer-events: all;
+    bottom:0px;
+}
+.video-carousel-box .button_play{
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+body.fl-builder-edit .video-carousel-row .video-carousel-slide{
+    width: 100%!important;
+}
+body:not(.fl-builder-edit) .video-carousel-img,
+body:not(.fl-builder-edit) .video-carousel-img .fl-photo-content,
+body:not(.fl-builder-edit) .video-carousel-img img{
+    height: 286px;
+    width: 450px;
+    transition: all 0.5s ease;
+    margin:auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+body:not(.fl-builder-edit) .slick-center .video-carousel-img,
+body:not(.fl-builder-edit) .slick-center .video-carousel-img .fl-photo-content,
+body:not(.fl-builder-edit) .slick-center .video-carousel-img img{
+    height: 512px;
+    width: 810px;
+}
+.video-carousel-slider .slick-track{
+    align-items:center;
+}
+body:not(.fl-builder-edit) .slick-center .video-carousel-img{
+    box-sizing: content-box;
+}
+body:not(.fl-builder-edit) .video-carousel-row .video-carousel-slide{
+    display: flex!important;
+    flex-direction: row;
+    width: 650px!important;
+    height: 610px;
+    transition: all 0.5s ease;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+body:not(.fl-builder-edit) .video-carousel-row > .fl-row-content-wrap{
+
+}
+body:not(.fl-builder-edit) .video-carousel-row > .fl-row-content-wrap > .fl-row-content > .fl-col-group:first-child{
+    padding-right:72px;
+    padding-left:72px;
+    max-width: 1366px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+@media screen and (max-width: 1366px) {
+
+    /*****************/
+    /**** General ****/
+    /*****************/
+
+    .action-carousel-col .fl-col-content{
+        margin-left:0;
+    }
+
+    /******************************/
+    /**** overlapping carousel ****/
+    /******************************/
+
+    body:not(.fl-builder-edit) .overlap-carousel-row .fl-row-content{
+        display: block;
+    }
+    .overlap-carousel-row .slider-header{
+        justify-content: flex-start;
+    }
+
+}
+@media only screen and (max-width: 992px) {
+
+    /**********************/
+    /**** Taxtinomials ****/
+    /**********************/
+
+    .action-carousel-slide{
+        width:350px!important;
+    }
+
+    /********************/
+    /***Video Carousel***/
+    /********************/
+    body:not(.fl-builder-edit) .video-carousel-img, 
+    body:not(.fl-builder-edit) .video-carousel-img .fl-photo-content, 
+    body:not(.fl-builder-edit) .video-carousel-img img {
+        width: 512px;
+    }
+    body:not(.fl-builder-edit) .slick-center .video-carousel-img, 
+    body:not(.fl-builder-edit) .slick-center .video-carousel-img .fl-photo-content, 
+    body:not(.fl-builder-edit) .slick-center .video-carousel-img img{
+        width: 728px;
+    }
+    body:not(.fl-builder-edit) .video-carousel-box{
+        margin-left: 22px;
+    }
+    
+}
+@media only screen and (max-width: 768px) {
+
+    /*****************/
+    /**** General ****/
+    /*****************/
+
+    .slider-ctl,.slider-header{
+        gap:8px;
+    }
+
+    .slick-arrow img{
+        width:48px;
+    }
+
+    /**********************/
+    /**** Taxtinomials ****/
+    /**********************/
+
+    .action-carousel-slide{
+        width:calc(100vw - 36px)!important;
+        max-width: 306px;
+    }
+    /************************/
+    /**** Featured Image ****/
+    /************************/
+    .img-feature.action-carousel-row .action-carousel-slide{
+        width:calc(100vw - 36px)!important;
+        max-width: 306px;
+    }
+    .carousel-img,
+    .carousel-img .fl-photo-content,
+    .carousel-img .fl-photo-content img{
+        width:100%;
+        height:260px;
+        object-fit: cover;
+    }
+    .small-reverse .slider-header{
+        justify-content: flex-end;
+    }
+    /******************************/
+    /**** overlapping carousel ****/
+    /******************************/
+    .overlap-carousel-info-col .slick-track{
+        display: block;
+    }
+    .overlap-carousel-info-col .fl-col-content .fl-module-box{
+        width: 100%;
+        z-index: 1;
+    }
+    .overlap-carousel-info-col .slick-list{
+        width:100%;
+    }
+    .overlap-carousel-img-col{
+        margin-bottom: -36px;
+        position: relative;
+        z-index: 1;
+    }
+    .overlap-carousel-img-col .fl-module-box {
+        min-height:240px;
+        height:240px;
+        max-width: 340px;
+        width:100%;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+    .overlap-carousel-info-col .fl-heading-text{
+        margin-top:26px;
+    }
+    .overlap-carousel-info-col .slick-slide{
+            align-items: flex-start;
+    }
+    .overlap-carousel-info-col .slick-slide > div{
+        height:100%;
+    }
+    .overlap-carousel-info-col .fl-module-box {
+        display: flex !important;
+        justify-content: flex-start;
+    }
+    body:not(.fl-builder-edit) .overlap-carousel-row .fl-row-content{
+        display: flex;
+        gap:16px;
+        flex-direction: column;
+    }
+    body:not(.fl-builder-edit) .overlap-carousel-row .fl-row-content:before,
+    body:not(.fl-builder-edit) .overlap-carousel-row .fl-row-content:after{
+        display: none;
+    }
+
+    /********************/
+    /***Video Carousel***/
+    /********************/
+    body:not(.fl-builder-edit) .video-carousel-row .video-carousel-slide{
+        width: 100vw !important;
+        height:390px!important;
+        padding:0 18px;
+    }
+    body:not(.fl-builder-edit) .video-carousel-row > .fl-row-content-wrap > .fl-row-content > .fl-col-group:first-child{
+        padding-right:18px;
+        padding-left:18px;
+        max-width: 1366px;
+        box-sizing: border-box;
+        margin: auto;
+    }
+    body:not(.fl-builder-edit) .video-carousel-slide,
+    body:not(.fl-builder-edit) .video-carousel-slide .fl-col-content,
+    body:not(.fl-builder-edit) .video-carousel-img,
+    body:not(.fl-builder-edit) .video-carousel-img .fl-photo-content,
+    body:not(.fl-builder-edit) .video-carousel-img img,
+    body:not(.fl-builder-edit) .slick-center .video-carousel-img, 
+    body:not(.fl-builder-edit) .slick-center .video-carousel-img .fl-photo-content, 
+    body:not(.fl-builder-edit) .slick-center .video-carousel-img img{
+        width:100%;
+        height:280px;
+    }
+    body:not(.fl-builder-edit) .video-carousel-box{
+        margin-left: 0;
+        margin-right: 16px;
+        flex-direction: column-reverse;
+        padding: 16px;
+        gap: 26px;
+        border-radius: 16px;
+        width: calc(100vw - 52px);
+        max-width: 500px;
+        left:36px;
+    }
+    body:not(.fl-builder-edit) .video-carousel-row .video-carousel-slide{
+        justify-content: flex-start;
+    }
+    .video-carousel-row .slider-header,
+    .video-carousel-row .slider-ctl{
+        gap:8px;
+    }
+    body:not(.fl-builder-edit) button img {
+        width: 48px;
+        height: 48px;
+    }
+
+}
+@media only screen and (max-width: 375px) {
+    .overlap-carousel-img-col{
+        margin-bottom: 0px;
+    }
+    .overlap-carousel-info-col .fl-heading-text{
+        margin-top:0px;
+    }
+}

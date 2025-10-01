@@ -1,0 +1,127 @@
+/*
+    ===================
+    3 Column Icon Links
+    ===================
+*/
+.basic-cta-card-box{
+    gap:66px;
+}
+
+.basic-cta-card-box > .fl-module-box{
+    flex-basis: calc(33% - 44px);
+}
+/*
+    ===================
+            FAQ
+    ===================
+*/
+
+.fl-accordion-button{
+    display: flex;
+    align-items: center;
+}
+
+.fl-builder-content .fl-accordion-button a.fl-accordion-button-icon{
+    opacity: 1;
+}
+
+.fl-accordion-button-icon-left{
+    margin-inline-end: 18px;
+}
+
+.fl-accordion-button-icon-right{
+    margin-inline-start: 18px;
+}
+
+.fl-builder-content .fl-accordion-button .fl-accordion-button-icon i{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fl-builder-content .fl-accordion-button i.fl-accordion-button-icon.fa-minus::before {
+    background: url(/wp-content/uploads/minus-icon.svg) center center / contain no-repeat;
+    transition: all 0.25s ease;
+    content: "";
+    width: 21px;
+    height: 21px;
+    background-size: cover;
+    display: inline-block;
+}
+
+.fl-builder-content .fl-accordion-button i.fl-accordion-button-icon.fa-plus::before {
+    background: url(/wp-content/uploads/plus-icon.svg) center center / contain no-repeat;
+    transform: rotate(180deg);
+    transition: all 0.25s ease;
+    content: "";
+    width: 21px;
+    height: 21px;
+    background-size: cover;
+    display: inline-block;
+}
+@media screen and (max-width: 1366px) {
+    /*
+    ===================
+    3 Column Icon Links
+    ===================
+    */
+    .basic-cta-card-box{
+        gap:48px;
+    }
+    .basic-cta-card-box > .fl-module-box{
+        flex-basis: calc(33% - 32px);
+    }
+}
+@media only screen and (max-width: 992px) {
+    /*
+    ===================
+    3 Column Icon Links
+    ===================
+    */
+    .basic-cta-card-box{
+        gap:36px;
+    }
+    .basic-cta-card-box > .fl-module-box{
+        flex-basis: calc(50% - 18px);
+    }
+}
+@media only screen and (max-width: 768px) {
+    /*
+    ===================
+    3 Column Icon Links
+    ===================
+    */
+    .basic-cta-card-box{
+        gap:16px;
+    }
+    .basic-cta-card-box > .fl-module-box{
+        flex-basis: 100%;
+    }
+}
+
+/***************************/
+/*  START :: SVG Dividers  */
+/***************************/
+:root {
+    --divider-wave-sky-blue: url(/wp-content/uploads/divider-wave-sky-blue.svg);
+}
+/* does not support mask */
+.shape-divider-wave .fl-col-content {
+    background: no-repeat var(--divider-wave-sky-blue) center center;
+    background-size: contain;
+ }
+ 
+ @supports (mask: initial) or (-webkit-mask: initial) {
+     /* supports mask */
+     .shape-divider-wave .fl-col-content {
+         background-image: none;
+         background-color: currentColor; /* allows svg color to be set via BB row's text color*/
+             -webkit-mask: no-repeat var(--divider-wave-sky-blue) center center;
+         mask: no-repeat var(--divider-wave-sky-blue) center center;
+             -webkit-mask-size: contain;
+         mask-size: contain;
+     }
+  }
+ /***************************/
+/*  END   :: SVG Dividers  */
+/***************************/

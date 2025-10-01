@@ -1,0 +1,57 @@
+/*********************************************/
+/*  START :: Base Style Guide for Dev Pages  */
+/*********************************************/
+:root{
+    --accent: #707070;
+    --accentlight: #C1BFBB;
+}
+.base-style-guide > div {
+    padding-bottom: 32px;
+}
+.base-style-guide div:has(> .base-style-guide--section-label) {
+    border-top: 1px solid var(--accentlight, #707070);
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    margin: 0 0 70px;
+}
+.base-style-guide h2.base-style-guide--section-label  {
+    background: var(--accent, #707070);
+    border-radius: 0px 0px 12px 12px;
+    color: var(--white, #fff);
+    display: inline-block;
+    font-family: var(--font-content);
+    font-size: 21px;
+    font-size: 1.31rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 5px 17px !important;
+    width: fit-content;
+}
+.base-style-guide .base-style-guide--section-label + .base-style-guide--section-label {
+    background: var(--accentlight, #C1BFBB);
+    border-top: 1px solid var(--accentlight, #C1BFBB);
+}
+.base-style-guide .base-style-guide--section-heading {
+    color: var(--accentlight, #C1BFBB);
+    font-family: var(--font-content);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 70px 10px 20px;
+}
+.base-style-guide .base-style-guide--palette > .fl-col-content {
+    border-radius: 20px;
+    font-weight: 600;
+    margin: 10px;
+    min-height: 265px;
+    padding: 30px;
+}
+.base-style-guide .fl-col-group-equal-height {
+    margin-bottom: 36px;
+}
+/*********************************************/
+/*  END   :: Base Style Guide for Dev Pages  */
+/*********************************************/

@@ -1,0 +1,174 @@
+/***************
+    
+    High Noon Style Shortcuts
+    2025 - Loop: Design for Social Good
+    https://weareloop.com/
+ 
+    This file contains classes shortcuts
+    for styling elements in the Beaver Builder theme.
+ 
+    @package High Noon Theme
+    @version 1.0.0
+
+***************/
+
+.fl-builder-content .maxwidth130 {max-width:130px}
+.fl-builder-content .maxwidth200 {max-width:200px}
+.fl-builder-content .maxwidth300 {max-width:300px}
+.fl-builder-content .maxwidth350 {max-width:350px}
+.fl-builder-content .maxwidth375 {max-width:375px}
+.fl-builder-content .maxwidth400 {max-width:400px}
+.fl-builder-content .maxwidth450 {max-width:450px}
+.fl-builder-content .fl-builder-content .maxwidth500 {max-width:500px}
+.fl-builder-content .maxwidth550 {max-width:550px}
+.fl-builder-content .maxwidth600 {max-width:600px !important}
+.fl-builder-content .maxwidth650 {max-width:650px}
+.fl-builder-content .maxwidth700 {max-width:700px}
+.fl-builder-content .maxwidth750 {max-width:750px}
+.fl-builder-content .maxwidth800 {max-width:800px}
+.fl-builder-content .maxwidth850 {max-width:850px}
+.fl-builder-content .maxwidth900 {max-width:900px}
+.fl-builder-content .maxwidth950 {max-width:950px}
+.fl-builder-content .maxwidth1000 {max-width:1000px}
+.fl-builder-content .maxwidth1086 {max-width:1086px}
+.fl-builder-content .maxwidth1366 {max-width:1366px}
+.fl-builder-content .maxwidth25vw {max-width:25vw}
+.fl-builder-content .maxwidth50vw {max-width:50vw}
+.fl-builder-content .maxwidth75vw {max-width:75vw}
+.fl-builder-content .maxwidth100vw {max-width:100vw}
+
+/* if class added to row, apply to same wrap where padding is applied  */
+body:not(.fl-builder-edit) .height100vh.fl-row > .fl-row-content-wrap {
+    max-height: 100%;
+    min-height: 100vh; /* fallback for firefox */ 
+    min-height: 100lvh; /* on iphone, height won't jump with dynamic addressbar */
+    height: auto;
+}
+/* if class not added to row, apply directly to element */
+body:not(.fl-builder-edit) .height100vh:not(.fl-row) {
+    max-height: 100%;
+    min-height: 100vh; /* fallback for firefox */
+    min-height:100lvh; /* on iphone, height won't jump with dynamic addressbar */
+    height: auto;
+}
+
+/* @media only screen and (max-width: 768px) {
+    body:not(.fl-builder-edit) .height100vh.fl-row > .fl-row-content-wrap { */
+        /*height: 99vh; /* fallback for firefox */ 
+        /*height:99svh; /* if class added to row, apply to same wrap where padding is applied  */
+    /* } 
+    body:not(.fl-builder-edit) .height100vh:not(.fl-row) { */
+        /*height: 99vh; /* fallback for firefox */
+        /*height:99svh; /* if class not added to row, apply directly to element */
+    /* } 
+} */
+
+.fl-builder-content .marginautoflat {margin:auto}
+.fl-builder-content .marginauto {margin:auto;float:none}
+.fl-builder-content .margin0auto {margin: 0 auto;}
+.fl-builder-content .marginauto_leftright {margin-left:auto;margin-right:auto;float:none}
+.fl-builder-content .marginauto_topbottom {margin-top:auto;margin-bottom:auto;margin:auto;float:none}
+.fl-builder-content .marginauto_top {margin-top:auto;float:none}
+.fl-builder-content .marginleft {margin-left:0;float:none}
+.fl-builder-content .displaynone {display:none;}
+.fl-builder-content .floatleft {float:left}
+.fl-builder-content .floatright {float:right}
+.fl-builder-content .textaligncenter {text-align:center}
+.fl-builder-content .textalignleft {text-align:left}
+.fl-builder-content .textalignright {text-align:right}
+.fl-builder-content .verticalalignbottom {vertical-align:bottom}
+.fl-builder-content .padding140 {padding-left:176px;padding-right:176px;}
+.fl-builder-content .padding72 {padding-left:72px;padding-right:72px;}
+
+.fl-builder-content .positionrelative {position:relative}
+.fl-builder-content .positionabsolute {position:absolute}
+.fl-builder-content .zindex0 {z-index:0}
+.fl-builder-content .zindex1 {z-index:1}
+.fl-builder-content .zindex2 {z-index:2}
+.fl-builder-content .zindex3 {z-index:3}
+.fl-builder-content .zindex4 {z-index:4}
+.fl-builder-content .zindex5 {z-index:5}
+
+body:not(.fl-builder-edit) .fl-builder-content .flexcenter {display: flex;align-content: center;align-self: stretch;flex-wrap: wrap;}
+body:not(.fl-builder-edit) .fl-builder-content div:has(> .flexcenter) {display: flex;} /*apply flex to parent of div with .flexcenter child, so child's flex properties will work */
+.fl-builder-content .flexshrink0 {flex-shrink: 0;}
+.fl-builder-content .radius20, .radius20 iframe {border-radius: 20px;overflow: hidden;}
+.fl-builder-content .radius20 iframe {border: 6px solid #000;}
+
+.fl-builder-content .lineheight24 {line-height:24px;}
+.fl-builder-content body:not(.fl-builder-edit) .offscreen {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    left: -99999px;
+    z-index: 999;
+}
+/* allows element within a wrapper to break out of wrapper and go fullscreen without the entire row needing to be set to fullwidth */
+.fl-builder-content .fullwidth {
+    left: 50%;
+    margin-left: calc(var(--viewportWidth) / -2);
+    margin-right: calc(var(--viewportWidth) / -2);
+    max-width: var(--viewportWidth);
+    position: relative;
+    right: 50%;
+    width: var(--viewportWidth);
+}
+
+.fl-builder-content .nospacewrap {white-space: nowrap;}
+.fl-builder-content .nowordwrap {overflow-wrap: normal;}
+.fl-builder-content .nounderline, .fl-page-content a.nounderline, .fl-page-content .nounderline a {text-decoration:none !important;border:0 !important;}
+.fl-builder-content .nopadding,.nopadding .fl-row-content {padding:0}
+.fl-builder-content .noscroll {overflow:hidden}
+/* BUG FIX :: BB Row Settings disappear in backend when overflow classes are added to row  */
+body:not(.fl-builder-edit) .fl-builder-content .overflowx_hidden {overflow-x:hidden}
+body:not(.fl-builder-edit) .fl-builder-content .overflowy_hidden {overflow-y:hidden}
+
+.fl-builder-content .bglefttop      {background-position:left top;object-position:left top}
+.fl-builder-content .bgleftcenter   {background-position:left center;object-position:left center;}
+.fl-builder-content .bgleftbottom   {background-position:left bottom;object-position:left bottom;}
+.fl-builder-content .bgcentertop    {background-position:center top;object-position:center top;}
+.fl-builder-content .bgcentercenter {background-position:center center;object-position:center center;}
+.fl-builder-content .bgcenterbottom {background-position:center bottom;object-position:center bottom;}
+.fl-builder-content .bgrighttop     {background-position:right top;object-position:right top;}
+.fl-builder-content .bgrightcenter  {background-position:right center;object-position:right center;}
+.fl-builder-content .bgrightbottom  {background-position:right bottom;object-position:right bottom;}
+
+.fl-builder-content .color_blue_light {color:var(--blue-light)}
+.fl-builder-content .color_blue_dark {color:var(--blue-dark)}
+
+/* BB XL DESKTOP, and up */
+@media screen and (min-width: 1366px) {
+    /***********************************************/
+    /*  Full Width Breakout honoring wrapper-left  */
+    /***********************************************/
+    .nopadding.marginleft > div,
+    .nopadding .marginleft {
+        /* viewport width minus (site wrapper minus (padding at this breakpoint times both sides)) 
+        = total padding for both sides, so divide by 2 for just one side 
+        (Note: --viewportWidth has already calculated 100vw minus scrollbar) */
+        padding-left: calc( (var(--viewportWidth) - (1366px - (var(--content-padding) * 2))) / 2);
+    }
+    .nopadding.marginright > div,
+    .nopadding .marginright {
+        /* viewport width minus (site wrapper minus (padding at this breakpoint times both sides)) 
+        = total padding for both sides, so divide by 2 for just one side 
+        (Note: --viewportWidth has already calculated 100vw minus scrollbar) */
+        padding-right: calc( (var(--viewportWidth) - (1366px - (var(--content-padding) * 2))) / 2);
+    }
+}
+/* BB "LARGE" DESKTOP, and down */
+@media only screen and (max-width: 1366px) {
+    /***********************************************/
+    /*  Full Width Breakout honoring wrapper-left  */
+    /***********************************************/
+    .nopadding.marginleft > div,
+    .nopadding .marginleft {
+        /* just padding for current breakpoint */
+        padding-left: var(--content-padding);
+    }
+    .nopadding.marginright > div,
+    .nopadding .marginright {
+        /* just padding for current  breakpoint */
+        padding-right: var(--content-padding);
+    }
+}
