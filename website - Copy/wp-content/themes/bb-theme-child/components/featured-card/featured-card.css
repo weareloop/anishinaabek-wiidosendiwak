@@ -1,0 +1,733 @@
+/********************/
+/********************/
+/** Rows & Modules **/
+/** Featured Cards **/
+/********************/
+/********************/
+
+/* variables used in these rows */
+:root {
+    --black: #000;
+    --charcoal: #ddd;
+    --pink: #C31052;
+    --purple-medium: #6F2877;
+    --sky-blue: #56cef3;;
+    --sandbar-blue: #C8EFE8;
+    --Sky-Blue: #C5E6E5;
+    --Snow-White: #FCFAEF;
+}
+
+/***********************/
+/* Start :: Hover Card */
+/***********************/
+/*  
+    Rows that use Hover Card:
+    • Overlapping Card Trio - Full Width Image 
+    • Feature Card - 3 Column Box
+*/
+
+/* sets variables for this row */
+.hover-card {
+    /* card */
+    --card-shadow: 0px 3px 20px rgba(0, 0, 0, 0.16);
+    /* title */
+    --title-color: var(--purple-medium);
+    --title-underline-color: var(--sky-blue);
+    /* arrow down icon */
+    --icon-font: 'Font Awesome 5 Pro';
+    --arrow-content: "\f178";
+    --arrow-color: var(--sky-blue);
+    /* cta */
+    --cta-link-color: var(--pink);
+    --cta-underline-color: var(--sky-blue);
+    --cta-arrow-color: var(--sky-blue);    
+}
+
+.hover-card,
+.hover-card>.fl-module-content,
+.hover-card .fl-module-content .fl-callout,
+.hover-card .fl-module-content .fl-callout .fl-callout-content{
+    height:100%;
+}
+.hover-card>.fl-module-content{
+    padding:36px;
+    border-radius: 30px;
+    overflow: hidden;
+    min-height: 550px;
+    box-shadow: var(--card-shadow);
+}
+.hover-card .fl-module-content .fl-callout .fl-callout-content{
+    display: flex;
+    flex-direction: column;
+}
+body .hover-card h3.fl-callout-title >a {display:block;}
+body .hover-card h3.fl-callout-title{
+    margin-top:auto;
+    padding-bottom:18px;
+    /* border-bottom:1px solid var(--title-underline-color); */
+}
+/* body .hover-card h3.fl-callout-title,
+body .hover-card h3.fl-callout-title a,
+body .hover-card h3.fl-callout-title a:hover{
+    color:var(--title-color);
+} */
+body .hover-card h3.fl-callout-title:after {
+    color: var(--arrow-color);
+    content: var(--arrow-content);
+    display: inline-block;
+    font-family: var(--icon-font);
+    font-size: 33px;
+    font-weight: 500;
+    height: 36px;
+    position: relative;
+    top: 8px;
+    transform: rotate(90deg);
+    transition: all .25s ease;
+}
+body:not(.fl-builder-edit) .hover-card .fl-callout-text-wrap{
+    transition: all .5s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+body:not(.fl-builder-edit) .hover-card:hover .fl-callout-text-wrap {
+    max-height: 200px;
+}
+body:not(.fl-builder-edit) .hover-card .fl-callout-text-wrap.maxheight200 {
+    max-height:200px;
+}
+.hover-card .fl-callout-text p{
+    /* font-size: 17px;
+    font-size: .85rem;
+    line-height: 26px;
+    line-height: 1.3rem;
+    padding-top:18px!important; */
+    padding-bottom:15px!important;
+}
+.hover-card .fl-callout-text-wrap>a{
+    font-family: var(--font-content);
+    font-size: 21px;
+    font-size: 1.05rem;
+    line-height: 25px;
+    line-height: 1.25rem;
+    padding-bottom:5px;
+    color: var(--cta-link-color);
+    text-decoration: none;
+    background-image: linear-gradient(var(--cta-underline-color), var(--cta-underline-color));
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 100% 1px;
+    transition: background-size 250ms ease-in-out;
+    display: inline-block;
+    font-weight: 700;
+}
+.hover-card:hover .fl-callout-text-wrap>a:hover {    animation: 0.25s underline;}
+.hover-card:hover .fl-callout-text-wrap>a{
+    animation:underline 0.25s ease;
+    background-image: linear-gradient(var(--cta-underline-color), var(--cta-underline-color));
+}
+.hover-card .fl-callout-text-wrap>a:after {
+    /* display: inline-block;
+    margin-left: 8px;
+    content: '';
+    background-image: url(/wp-content/uploads/button-arrow-pink.svg);
+    width: 16px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 0.25s ease; */
+    color: var(--cta-arrow-color);
+    content: "\f178";
+    display: inline-block;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 500;
+    padding-left: 10px;
+    position: relative;
+    top: 1px;
+    transition: all .25s ease;
+}
+/* .hover-card:hover .fl-callout-text-wrap>a:after {
+    margin-left: 20px;
+} */
+.hover-card .fl-callout-title a,
+.hover-card .fl-photo-content a{
+    pointer-events: none!important;
+    cursor:context-menu!important;
+}
+
+.fl-module.featured_cta {
+    margin-top:auto  !important;
+}
+
+/* BB "LARGE" DESKTOP, and down */
+@media screen and (max-width: 1366px) {
+    .hover-card .fl-callout-text p{
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+}
+/* TABLET, and down */
+@media only screen and (max-width: 992px) {
+    .hover-card-grid{
+        grid-template-columns: repeat(2, 1fr)!important;
+    }
+    .hover-card>.fl-module-content{
+        min-height: 500px;
+    }
+}
+/* MOBILE, only */
+@media only screen and (max-width: 768px) {
+    .hover-card .fl-callout-text p{
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    .hover-card>.fl-module-content{
+        min-height: 550px;
+    }
+}
+
+/***********************/
+/* END   :: Hover Card */
+/***********************/
+
+/************************************************/
+/*  START :: Feature Card - Horizontal Overlap  */
+/************************************************/
+.featuredcards_overlap_row {
+
+}
+/* TABLET, and down */
+@media only screen and (max-width: 992px) {
+    .featuredcards_overlap_image img {
+        max-height:300px;
+        object-fit: cover;
+    }
+}
+/* MOBILE, only */
+@media only screen and (max-width: 768px) {
+    .featuredcards_overlap_image img {
+        max-height:280px;
+    }
+    .featuredcards_bgoverlap .fl-row-content-wrap {
+        background-size: 210vh;
+    }
+    .featuredcards_bgoverlap.col3 .fl-builder-bottom-edge-layer.fl-builder-shape-rect >svg {
+        height:70%
+    }
+
+    .featuredcards_bgoverlap.col2 .fl-builder-bottom-edge-layer.fl-builder-shape-rect >svg {
+        height:50%
+    }
+}
+/************************************************/
+/*  END   :: Feature Card - Horizontal Overlap  */
+/************************************************/
+
+
+/****************************************/
+/*  START :: 3 Column Split Background  */
+/****************************************/
+/* NOTE: BB bug exists where background gradient set at Large Desktop breakpoint via BB doesn't render. 
+This row requires media query below to manually set background gradient for Large Desktop breakpoint */
+
+/* sets variables for this row */
+.row--feature_card--3column_split {
+    --color-top: var(--Sky-Blue);
+    --color-top: var(--Snow-White);
+}
+
+.scaleonhover .fl-col-content,
+.scaleonhover.fl-module-box{
+    transition: all .25s ease;
+}
+.scaleonhover .fl-col-content:hover,
+.scaleonhover.fl-module-box:hover {
+    transform: scale(1.05);
+}
+.row--feature_card--3column_split .feature-card .fl-module-button {
+    margin-top: auto;
+}
+/* BB "LARGE" DESKTOP, only*/
+@media only screen and (min-width: 992px) and (max-width: 1366px) {
+    /* BB Large Background Gradient size does not render */
+     .row--feature_card--3column_split > .fl-row-content-wrap {
+        background-image: linear-gradient(180deg, var(--color-top) 37%, var(--color-top) 37.01%);
+    }
+}
+/****************************************/
+/*  END   :: 3 Column Split Background  */
+/****************************************/
+
+/*******************************************************/
+/*  START :: Overlapping Card Trio - Full Width Image  */
+/*******************************************************/
+/* NOTE: requires Hover Card block */
+
+
+/* Featured cards with BG Image and flat color overlap */
+/*******************************************************/
+.featuredcards_bgoverlap {
+    
+}
+/* TABLET, and down */
+@media only screen and (max-width: 992px) {
+    .featuredcards_bgoverlap.col3 .fl-builder-bottom-edge-layer.fl-builder-shape-rect >svg {
+        height:60%
+    }
+    .featuredcards_bgoverlap.col2 .fl-builder-bottom-edge-layer.fl-builder-shape-rect >svg {
+        height:40%
+    }
+    .featuredcards_bgoverlap .fl-row-content-wrap {
+        background-size: 120vw;
+        background-position-y: 0;
+    }
+}
+/* MOBILE, only */
+@media only screen and (max-width: 768px) {
+    body h3.fl-callout-title{
+        padding-bottom: 20px;
+    }
+    .hover-card-grid{
+        grid-template-columns: repeat(1, 1fr)!important;
+    }
+}
+/*******************************************************/
+/*  END   :: Overlapping Card Trio - Full Width Image  */
+/*******************************************************/
+
+/**********************************************/
+/*  START :: 2 Columns Cards / Featured Image */
+/**********************************************/
+/* MOBILE, only */
+@media only screen and (max-width: 768px) {
+    .hover-card-grid{
+        grid-template-columns: repeat(1, 1fr)!important;
+    }
+}
+/**********************************************/
+/*  END   :: 2 Columns Cards / Featured Image */
+/**********************************************/
+
+/***********************************/
+/*  START :: Expandable Image Card */
+/***********************************/
+/*******************/
+/***Card Carousel***/
+/*******************/
+
+
+.featured_expandable_item .card-carousel-img.active, 
+.featured_expandable_item:hover .card-carousel-img{
+    height:20% !important;
+}
+
+.featured_expandable_item.hideimg .card-carousel-img.active, 
+.featured_expandable_item.hideimg:hover .card-carousel-img{
+    height:0% !important;
+}
+
+body:not(.fl-builder-edit) .card-carousel-img {
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height:calc(100% - 200px);
+    transition:all 0.5s ease;
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    overflow: hidden;
+    background: #000;
+}
+
+body:not(.fl-builder-edit) .featured_expandable_item {
+    position:relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+
+body:not(.fl-builder-edit) .card-carousel-img .fl-photo-content,
+body:not(.fl-builder-edit) .card-carousel-img .fl-module-content,
+body:not(.fl-builder-edit) .card-carousel-img .fl-photo,
+body:not(.fl-builder-edit) .card-carousel-img .fl-photo-content img{
+    width:100%;
+    height:100%;
+}
+.card-carousel-img .fl-photo-content img{
+    
+    height:100%;
+    object-fit: cover;
+}
+.card-carousel-slide{
+    width:440px!important;
+    height: 100%;
+}
+body.fl-builder-edit .card-carousel-slide{
+    width:100%!important;
+}
+.card-carousel-slide .card-carousel-title{
+    height:200px;
+}
+.single-row-title .card-carousel-slide .card-carousel-title{
+    height:144px;
+}
+.single-row-title .card-carousel-img{
+    height:calc(100% - 144px);
+}
+.card-carousel-title.fl-module-heading h3{
+    padding-bottom: 26px!important;
+}
+.card-carousel-title a:hover, .card-carousel-title a{
+    color:var(--black);
+    font-family: var(--font2);
+}
+/* Adds dash separating title from text */
+/* .card-carousel-title .fl-module-content:after{
+    width:18px;
+    height:7px;
+    content:"";
+    border-radius: 1px;
+    background-color: var(--charcoal);
+    display: block;
+    transition: all 0.5s ease;
+} */
+.card-carousel-txt p{
+    margin-bottom: 0;
+    /*height: 104px;*/
+    overflow: hidden;
+}
+/* BB "LARGE" DESKTOP, and down */
+@media screen and (max-width: 1366px) {
+    body:not(.fl-builder-edit) .featured_expandable_item {
+        height: initial;
+    }
+}
+/* TABLET, and down */
+@media only screen and (max-width: 992px) {
+    .action-carousel-header-box{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+/* MOBILE, only */
+@media only screen and (max-width: 768px) {
+    .action-carousel-header-box{
+        padding-left: 18px;
+        padding-right: 18px;
+        flex-direction: column!important;
+    }
+}
+/***********************************/
+/*  END   :: Expandable Image Card */
+/***********************************/
+
+/**************************************************/
+/*  START :: Resource Cards - 2 column + 3 column */
+/**************************************************/
+/* sets variables for this row */
+.row-resource-card {
+    --card-background-color: var(--white);
+    --tag-background-color: var(--sandbar-blue);
+    --arrow-right-diagonal: url(/wp-content/uploads/arrow-right-diagonal.svg)
+}
+.row-resource-card.col-3 .fl-col-group:not(.fl-col-group-nested){
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 19px;
+}
+.row-resource-card.col-2 .fl-col-group:not(.fl-col-group-nested){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 19px;
+}
+.row-resource-card .fl-col-group:before, 
+.row-resource-card .fl-col-group:after{
+    display: none;
+}
+.row-resource-card .fl-col{
+    background-color: var(--card-background-color);
+    border-radius: 16px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
+    cursor: pointer;
+    overflow: hidden;
+    width:100%!important;
+}
+.tag-resource-card p,
+.tag-hero p {
+    /* font-size: 0.778rem;
+    line-height: 1; */
+    font-size: 14px;
+    font-size: 0.88rem;
+    line-height: 22px;
+    line-height: 1.38rem;
+}
+.tag-resource-card .fl-rich-text,
+.tag-hero .fl-rich-text{
+    background-color: var(--tag-background-color);
+    padding: 4px 16px;
+    border-radius: 4px;
+}
+.tag-resource-card > div,
+.tag-hero > div,
+.cat-resource-card > div {
+    margin-top: 0;
+}
+/* .tag-resource-card, .cat-resource-card{
+    float:left;
+} */
+.tag-resource-card p,
+.tag-hero p,{
+    margin-bottom:0;
+}
+.title-resource-card{
+    clear:both;
+}
+.title-resource-card .fl-heading-text {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 0% 1px;
+    display:inline;
+    transition: background-size 250ms ease-in-out;
+    text-decoration: none;
+}
+.col-resource-card:hover .title-resource-card .fl-heading-text {
+    background-size: 100% 1px;
+    animation: 0.25s underline;
+}
+.title-resource-card .fl-heading-text{
+    /* background-image: linear-gradient(90deg, #99ffe8, #99ffe8);
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+    background-position: bottom; */
+}
+.yellowlink .title-resource-card .fl-heading-text{
+    /* background-image: linear-gradient(90deg, var(--yellow), var(--yellow)); */
+}
+.cat-resource-card p{
+    /* font-family: var(--century);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 0.889rem;
+    line-height: 1;
+    margin-left:16px;
+    margin-bottom:0;
+    margin-top:6px; */
+}
+
+/* .info-resource-card .fl-col-content{
+    background-image: 
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 26px);
+    background-position-y: 26px;
+    background-size: 20px;
+    transition: all 0.5s ease-in-out;
+} */
+.col-resource-card:hover .info-resource-card .fl-col-content{
+    /*padding-bottom: 56px;*/
+    /*margin-top: -20px;*/
+}
+.info-resource-card .fl-module-rich-text:not(.cat-resource-card, .tag-resource-card) p{
+    /* font-size: 0.889rem;
+    line-height: 1.389rem; */
+}
+
+.col-resource-card>.fl-col-content{
+    background-size: 100%;
+    background-position: top;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.fl-post .img-resource-card img {
+    height: calc(295px + 15px); /*image height plus .info-resource-card bottom value (the amount card is covering image for radius reveal) */
+    width:100%;
+    object-fit: cover;
+}
+
+.col-resource-card .info-resource-card {
+    background-image: var(--arrow-right-diagonal);
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 26px);
+    background-position-y: 26px;
+    background-size: 20px;
+    bottom: 15px;
+    /* height: 100%; */
+    position: relative;
+    height: calc(100% - 285px);
+    border-radius: 16px;
+    transition: all 0.5s ease;
+}
+/* .col-resource-card .info-resource-card .fl-col-content{
+
+
+.col-resource-card .info-resource-card .fl-col-content{
+
+    transition: all 0.5s ease;
+    height: 100%;
+    position: relative;
+    height: calc(100% - 282px);
+    bottom: 10px;
+}
+.col-resource-card:hover .info-resource-card .fl-col-content{
+    height: calc(100% - 262px);
+    bottom: 30px;
+    height: calc(100% - 285px);
+    bottom: 15px;
+} */
+
+/* slide up on hover */
+/* .col-resource-card:hover .info-resource-card {
+    height: calc(100% - 265px);
+    bottom: 30px;
+} */
+
+/* Ken Burns slow zoom on hover */
+.col-resource-card:hover .fl-photo-content img {
+    transform: scale(1.05);
+}
+/* Ken Burns faster zoom out on hover off */
+.fl-photo-content img {
+    transition: transform 1s ease-in-out;
+}
+
+.fl-post .col-3 .img-resource-card img {
+    height:245px;
+}
+
+/* .col-3 .col-resource-card .info-resource-card .fl-col-content{
+    transition: all 0.5s ease;
+    height: 100%;
+    position: relative;
+    height: calc(100% - 170px);
+    bottom: 10px;
+}
+.col-3 .col-resource-card:hover .info-resource-card .fl-col-content{
+    height: calc(100% - 150px);
+    height: calc(100% - 235px);
+    bottom: 15px;
+} */
+/* .col-3 .col-resource-card:hover .info-resource-card {
+    height: calc(100% - 215px);
+    bottom: 30px;
+} */
+
+.row-resource-card>.fl-col, 
+.col-resource-card>.fl-col-content, 
+.col-resource-card>.fl-col-content>.fl-col-group, 
+.row-resource-card .fl-col{
+    /* height: auto; */
+    height: 100%;
+}
+.title-resource-card + .fl-module-rich-text p{
+    margin-bottom:0px;
+}
+.light-resource.row-resource-card .fl-col{
+    background-color: var(--white);
+}
+
+.row-resource-card .fl-col{
+    position: relative;
+}
+
+.img-resource-card .fl-photo-content{
+    width:100%;
+}
+.fl-post .img-resource-card img[class*="wp-image-"]{
+    height:295px;
+    width:100%;
+    object-fit: cover;
+}
+.fl-post .col-3 .img-resource-card img[class*="wp-image-"]{
+    height:245px;
+    width:100%;
+    object-fit: cover;
+}
+/* this will target only Mac Safari and Chrome browsers */
+.mac .title-resource-card .fl-heading-text{
+    background-position:0 42px;
+}
+.mac .membership_cards ul li a{
+    background-position: 0 18px;
+}
+.mac .membership_cards ul li a{
+    background-position: 0 18px;
+}
+.mac .smalllink p a:not(.arrowlink, .btn-round, .btn-square){
+    background-position: 0 18px;
+}
+
+/*  BB "LARGE" DESKTOP, only */
+@media only screen and (min-width: 992px) and (max-width: 1366px) {
+    .row-resource-card.col-3 .fl-col-group:not(.fl-col-group-nested) {
+        grid-template-columns: 1fr 1fr;
+    }
+    .fl-post .col-3 .img-resource-card img {
+        height: 295px;
+    }
+    /* .col-resource-card .info-resource-card .fl-col-content{
+        height: calc(100% - 235px);
+    }
+    .col-resource-card:hover .info-resource-card .fl-col-content{
+        height: calc(100% - 215px);
+    } */
+}
+/* TABLET, and down */
+@media only screen and (max-width: 992px) {
+    .row-resource-card.col-3 .fl-col-group:not(.fl-col-group-nested) {
+        grid-template-columns: 1fr 1fr;
+    }
+    .fl-post .img-resource-card img {
+        height: calc(245px + 15px); /*image height plus .info-resource-card bottom value (the amount card is covering image for radius reveal) */
+    }
+    .fl-post .col-3 .img-resource-card img {
+        height: 295px;
+    }
+    .col-resource-card .info-resource-card {
+        height: calc(100% - (245px + 15px)); /*100% minus (image height plus .info-resource-card bottom value) */
+    }
+    .col-resource-card:hover .info-resource-card {
+        height: calc(100% - 245px); /*100% minus (image height plus .info-resource-card bottom value minus 15px hover adjustment) */
+    }
+    /* .col-resource-card .info-resource-card .fl-col-content{
+        height: calc(100% - 235px);
+    }
+    .col-resource-card:hover .info-resource-card .fl-col-content{
+        height: calc(100% - 215px);
+    } */
+}
+
+/* MOBILE, only */
+@media only screen and (max-width: 768px) {
+    .row-resource-card.col-3 .fl-col-group:not(.fl-col-group-nested),
+    .row-resource-card.col-2 .fl-col-group:not(.fl-col-group-nested){
+        gap: 26px;
+        grid-template-columns: 1fr;
+    }
+    .col-resource-card .info-resource-card {
+        height:unset!important;
+    }
+    /* .col-resource-card:hover .info-resource-card {
+        bottom: 10px;
+    } */
+    .row-resource-card .col-resource-card{
+        border-radius: 8px;
+    }
+    .col-resource-card>.fl-col-content{
+        border-radius: 8px;
+    }
+    .fl-post .img-resource-card img {
+        height: calc(185px + 10px); /*image height plus .info-resource-card bottom value (the amount card is covering image for radius reveal) */
+    }
+    .col-resource-card .info-resource-card {
+        /* height: calc(100% - (185px + 10px));  */
+        /*100% minus (image height plus .info-resource-card bottom value) */
+        border-radius: 8px;
+    }
+    .col-resource-card:hover .info-resource-card {
+        /* height: calc(100% - 180px);  */
+        /*100% minus (image height plus .info-resource-card bottom value minus 15px hover adjustment) */
+    }
+}
+
+/**************************************************/
+/*  END   :: Resource Cards - 2 column + 3 column */
+/**************************************************/

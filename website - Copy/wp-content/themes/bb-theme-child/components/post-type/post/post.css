@@ -1,0 +1,341 @@
+/**************************/
+/*  START :: Post Heroes  */
+/**************************/
+    /* Required variables 
+    – comment out if required variables ARE already set in main styles 
+    – uncomment if required variables NOT already set in main styles */
+    :root {
+        --img-placeholder: url(/wp-content/uploads/img-placeholder.jpg);
+        /* --content-margin-top : 26px; */
+        /* --border-radius-img: 24px;
+        --border-radius-img-mobile: 16px; */
+        --post-accent-color: #00FF91;
+        --post-accent-color-background: #247066;
+        --post-link-color: #002147;
+        --post-max-width: 1010px;
+        --post-max-width-full: 1222px;
+    }
+
+    /******************************************/
+    /*  START :: Social Sharing + Icon Links  */
+    /******************************************/
+    .share_icons span{
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 26px;
+        line-height: 1.63rem;
+        font-weight: 500;
+        color: var(--white);
+    }
+    .share_icons a {
+        transition: all .25s ease;
+    }
+    .share_icons a:hover {
+        transform: scale(1.05);
+    }
+    .share_icons img{
+        height:40px;
+        width:auto;
+    }
+    .share_icons {
+        gap: 26px;
+        display: flex;
+        align-items: center;
+    }
+    .icon-bluesky_logo::before {
+        width: auto;
+        margin: 0;
+    }
+    .social_link_container {
+        align-items: baseline;
+    }
+    .social_link_container .social_link .fl-button-has-icon {
+        line-height: 0;
+    }
+    /******************************************/
+    /*  END   :: Social Sharing + Icon Links  */
+    /******************************************/
+
+/* targets img tags w ONLY this one class – aka when no feature image is assigned  */
+.single .hero-row-post-large-img-col img[class="fl-photo-img"]{
+    background: var(--img-placeholder) no-repeat;
+    background-size: cover;
+}
+/* for post hero image w split background */
+/* .single .hero-row-post-large-img-col{
+    margin-top: -315px;
+    z-index: 30;
+} */
+
+.single .post_tag {
+    margin-bottom: var(--content-margin-top);
+}
+/* Adds comma between multiple post tag categories */
+.single .post_tag span::before{
+    content: ', ';
+}
+.single .post_tag span:first-of-type::before {
+    content: '';
+}
+
+@media only screen and (max-width: 768px) {
+    /* for post hero image w split background */
+    /* .single .hero-row-post-large-img-col{
+        margin-top: -108px;
+        margin-top: -78px;
+    }    */
+}
+/**************************/
+/*  END   :: Post Heroes  */
+/**************************/
+/*******************************/
+/*  START :: All Single Posts  */
+/*******************************/
+body:not(.fl-builder-edit) .single .herolargeheight div{
+    width:100%;
+}
+.single .herolargeheight img {
+    width:100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center center;
+}
+.single .heromediumheight img {
+    width:100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center center;
+}
+.single .hero-row-post-large-info-col p {
+    font-size: 22px;
+    font-size: 1.38rem;
+    line-height: 34px;
+    line-height: 2.13rem;
+}
+
+.post-content :is(ul,ol,p):not(:is(ul,ol) :is(ul,ol)) {
+    max-width: var(--post-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 36px;
+    font-weight: 400;
+}
+.post-content :is(ul,ol,p):not(:is(ul,ol) :is(ul,ol)):last-of-type {
+    margin-bottom: 0;
+}
+.post-content li + li{
+    margin-top: 16px;
+}
+.post-content hr {
+    border: 0;
+    border-top: 1px solid var(--post-accent-color);
+    margin-bottom: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 36px;
+    max-width: var(--post-max-width);
+}
+.post-content :is(h1,h2,h3,h4,h5,h6) {
+    max-width: var(--post-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap: pretty;
+    margin-bottom: 16px; 
+}
+
+.post-content .wp-caption p.wp-caption-text,
+.fl-photo-caption-below,
+.gallery + p {
+    font-size: 16px;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 28px; 
+    line-height: 1.75rem; 
+    margin-top: 10px;
+    padding: 0;
+    text-align: center;
+}
+.wp-caption p.wp-caption-text {
+    margin: 10px auto 30px !important;
+}
+
+.fl-photo-caption-below {
+    padding-bottom: 0;
+}
+/* .post-content p.image{
+    max-width: var(--post-max-width-full);
+    margin:auto;
+   margin-bottom: 36px;
+
+}
+.post-content p.image img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(-border-radius-img);
+    margin: 0;
+} */
+.post-content p:has(> img),
+.post-content p:has(> .fluid-width-video-wrapper),
+.post-content .wp-caption {
+    max-width: var(--post-max-width-full);
+    width: 100% !important;
+}
+.post-content p > img,
+.post-content .wp-caption > img {
+    border-radius: var(--border-radius-img);
+    object-fit: cover;
+    margin: 0;
+    width: 100%;
+}
+.post-content .wp-caption {
+    background: inherit;
+    border: none;
+    margin: 0 !important;
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+}
+.post-content .fluid-width-video-wrapper {
+    border-radius: var(--border-radius-img);
+    overflow: hidden;
+}
+.post-content blockquote p{
+    margin: auto;
+    margin-bottom: 36px;
+    padding-left: 72px;
+    padding-right: 72px;
+}
+.post-content p a,
+.post-content ul li a,
+.post-content ol li a,
+.single .fl-photo-caption a {
+    background-image: linear-gradient(var(--post-link-color), var(--post-link-color));
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    color: var(--post-link-color);
+    display:inline;
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+    transition: background-size 250ms ease-in-out;
+}
+.post-content p a:hover
+.post-content ul li a:hover,
+.post-content ol li a:hover {
+    animation: 0.25s underline;
+}
+.post-content > *:last-child{
+    margin-bottom:0!important;
+}
+.post-content code {
+    background-color: var(--post-accent-color-background);
+    color: var(--post-accent-color);
+}
+    /* MOBILE, only */
+    @media only screen and (max-width: 768px) {
+        /* On mobile, set --border-radius-img variable to --border-radius-img-mobile value, 
+        rather than rewriting every rule containing a border-radius
+        (Set to .post-content rather than :root so it only affects post-content, not universal) */
+        .post-content{
+            --border-radius-img: var(--border-radius-img-mobile);
+        }
+    }
+
+    /****************************/
+    /*  START :: Post Gallery   */
+    /****************************/
+    /* Required variables 
+        – comment out if required variables ARE already set in main styles 
+        – uncomment if required variables NOT already set in main styles */
+        /* :root {
+            --border-radius-img: 24px;
+            --border-radius-img-mobile: 16px;
+        } */
+
+    /* Overrides Wordpress default styles for gallery 
+        – comment out if default gallery styles ARE already disabled via filter 
+        – uncomment if default gallery styles NOT already disabled via filter */
+        /* #gallery-1 {
+            margin: auto;
+        }
+        #gallery-1 .gallery-item {
+            float: left;
+            margin-top: 10px;
+            text-align: center;
+            width: 33%;
+        }
+        #gallery-1 img {
+            border: 2px solid #cfcfcf;
+        }
+        #gallery-1 .gallery-caption {
+            margin-left: 0;
+        } */
+    
+    #gallery-1 .gallery-item,
+    #gallery-2 .gallery-item,
+    #gallery-3 .gallery-item,
+    #gallery-4 .gallery-item,
+    #gallery-5 .gallery-item,
+    #gallery-6 .gallery-item {
+        float: unset !important;
+        margin: unset !important;
+        text-align: unset !important;
+        width: unset !important;
+    }
+    .gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+    /* .gallery br {
+        display: inline-flex;
+    } */
+    .gallery .gallery-item {
+        margin: 0;
+    }
+    .gallery .gallery-item:has(.landscape) {
+        flex: 1 1 30%;
+    }
+    .gallery .gallery-item:has(.portrait) {
+        flex: 1 1 14%;
+    }
+    .gallery .gallery-item :is(.landscape, .portrait){
+        display: flex;
+        height: 100%;
+    }
+    .gallery .gallery-item img {
+        border: none !important;
+        border-radius: var(--border-radius-img);
+        object-fit: cover;
+        object-position: center bottom;
+    }
+    .gallery .gallery-caption {
+        display: none;
+    }
+    /* gallery captions generated by wordpress */
+    .gallery + p {
+        font-size: 16px;
+        font-size: 1rem;
+        margin-top:10px;
+        text-align: center;
+    }
+    /* MOBILE, only */
+    @media only screen and (max-width: 768px) {
+        .gallery {
+            gap: 8px;
+        }
+        .gallery .gallery-item img {
+            border-radius: var(--border-radius-img-mobile);
+        }   
+    }
+    /****************************/
+    /*  END   :: Post Gallery   */
+    /****************************/
+
+/*******************************/
+/*  END   :: All Single Posts  */
+/*******************************/

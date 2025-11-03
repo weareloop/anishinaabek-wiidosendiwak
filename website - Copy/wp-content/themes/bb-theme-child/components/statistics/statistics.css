@@ -1,0 +1,63 @@
+/********************/
+/********************/
+/** Rows & Modules **/
+/** Statistics     **/
+/********************/
+/********************/
+
+.floating-img {
+    position: relative;
+    transition: all .5s cubic-bezier(0.235, 0.615, 0.185, 0.995);
+}
+
+.floating-txt {
+    position: absolute;
+    /* top: calc(100% - 200px); */
+    bottom: -120px;
+    transition: all .75s cubic-bezier(0.235, 0.615, 0.185, 0.995);
+}
+
+.floating-txt .fl-col-content {
+    position: relative;
+}
+
+.floating-img .fl-photo-content {
+    overflow: hidden;
+    width: 100%;
+    transition: all .5s cubic-bezier(0.235, 0.615, 0.185, 0.995);
+
+}
+
+.fl-post .floating-img img {
+    height: 45vw;
+    width: 44vw;
+    object-fit: cover;
+    object-position: 0 0%;
+    transform: scale(1.5);
+    transition: all .5s cubic-bezier(0.235, 0.615, 0.185, 0.995);
+}
+
+@media screen and (max-width: 1366px) {
+    
+    .fl-post .floating-img img {
+        height: 52vw;
+    }
+}
+@media only screen and (max-width: 992px) {
+    
+      .fl-post .floating-img img {
+        height: 50vw;
+    }  
+}
+@media only screen and (max-width: 768px) {
+    
+    .fl-post .floating-img img {
+        height: 66vw;
+        width: calc(100vw - 36px);
+    }
+    .fl-post .floating-txt {
+        position: relative;
+        bottom: 16px;
+    }
+
+}

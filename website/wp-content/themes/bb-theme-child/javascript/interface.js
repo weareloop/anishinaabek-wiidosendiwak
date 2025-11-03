@@ -24,13 +24,19 @@ jQuery(document).ready(function( $ ) {
             e.preventDefault();
         }
     });
-    $(".has_submenu >button").append("<span class='menu_bubble_pointer'></span>")
+    //$(".has_submenu >button").append("<span class='menu_bubble_pointer'></span>")
     $(".has_submenu >button").on("click",function(e, enterKeyPressed){
 
+        var buttonStatte = $(this).attr('aria-expanded');
         if ($(window).width()<993)  {
-            $submenu = $(this).parent().find(">.sub-menu")
-            $(".has_submenu >.sub-menu").not($submenu).slideUp();
-            $submenu.slideToggle();
+            submenu = $(this).parent().find(">.sub-menu")
+            $(".has_submenu >.sub-menu").not(submenu).slideUp();
+            if(buttonStatte=='false'){
+                submenu.slideDown({ start: function () {$(this).css({display: "flex"})}});
+            }else{
+                submenu.slideUp();
+            }
+            
         }
         
         var $this = $(this);

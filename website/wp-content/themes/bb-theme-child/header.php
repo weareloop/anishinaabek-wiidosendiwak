@@ -109,53 +109,6 @@ FLTheme::head();
 
         <div class="header_inner">
 
-            <?php if ( is_nav_menu( "top-bar" ) ) { ?>
-            <!-- Quick Access Top Bar Menu -->
-            <nav id="top-bar" class="top-bar-nav" aria-labelledby="quick-access" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
-                <div>
-                    <h2 id="quick-access" class="sr-only">Quick Access</h2>
-                    <?php 
-                        wp_nav_menu( array( 
-                            'theme_location'    => 'bar', 
-                            'container'         =>'', 
-                            'walker' => new Push_Menu_Walker(),
-                            'items_wrap'        => '<ul id="%1$s" class="menu-quickaccess" aria-labelledby="nav-title">%3$s</ul>',
-                        )); 
-                    ?>
-                </div>
-
-            </nav>
-            <!-- Quick Access Top Bar Menu -->  
-            <?php } ?>
-
-
-
-            <!-- Search -->
-            <div class="searchbox" id="searchbox">
-                <div class="search_wrap" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
-                    <div class="search_inner">
-                        <span class="modal-focus-trap" aria-hidden="true" id="search-top" tabindex="0" data-target="search-close"></span>
-                        <h2 id="search-modal-title" class="sr-only">Search</h2>
-                        <div class="search_form_wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                <path d="M9.81739 5.46045C9.81739 6.30513 9.56693 7.13085 9.09767 7.83319C8.62841 8.53553 7.96143 9.08296 7.18106 9.40625C6.4007 9.72954 5.54199 9.81418 4.71353 9.64946C3.88506 9.48474 3.12404 9.07807 2.52669 8.48086C1.92934 7.88365 1.52249 7.12272 1.35758 6.2943C1.19267 5.46587 1.27711 4.60715 1.60022 3.8267C1.92332 3.04626 2.47059 2.37916 3.17282 1.90973C3.87506 1.44031 4.70071 1.18965 5.54539 1.18945C6.10627 1.18945 6.66165 1.29993 7.17983 1.51456C7.69802 1.7292 8.16885 2.0438 8.56545 2.4404C8.96204 2.837 9.27664 3.30783 9.49128 3.82601C9.70592 4.34419 9.81639 4.89958 9.81639 5.46045H9.81739Z" stroke="#C8EFE8" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M10.8875 10.8015L8.56445 8.47852" stroke="#C8EFE8" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <form method="get" id="searchform" action="/">
-                                <label for="search_input" class="sr-only">Search Query</label>
-                                <input id="search_input" type="text" name="s" class="search_input" placeholder="Type your search here">
-                            </form>
-                            <button class="search_button" form="searchform">Search</button>
-                            <button id="search-close" class="search_close" aria-label="Close"><i class="fas fa-times" aria-hidden="true"></i></button>
-                        </div>
-                        <span class="modal-focus-trap" aria-hidden="true" id="search-bottom" tabindex="0" data-target="search"></span>
-                    </div>
-                </div>
-            </div>            
-            <!-- Search -->
-
-
-
             <!-- Main Menu -->
             <nav id="menu-main" aria-label="Site">
                 <h2 id="nav-title" class="sr-only">Site Navigation</h2>
@@ -163,7 +116,6 @@ FLTheme::head();
                 <!-- Mobile Menu -->
                 <ul id="menu-mobile-primary">
                     <li class="menu-mobile-home"><a href="/"><img src="<?=get_field('site_options_logo_main', 'option');?>" alt="Home"></a></li>
-                    <li class="menu-mobile-button"><button>Call To Action</button></li>
                     <li class="menu-mobile-hamb"><button class="mobile_menu_toggle" aria-pressed="false" aria-label="Open navigation menu">Menu</button></li>
                 </ul>
                 <!-- Mobile Menu -->

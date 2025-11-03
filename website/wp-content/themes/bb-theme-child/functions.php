@@ -85,6 +85,16 @@ function statistics()
 }
 add_action('wp_enqueue_scripts', 'statistics', 999999);
 
+/////////////////
+// simple post //
+/////////////////
+include_once(dirname(__FILE__) . "/components/post-type/post/post.php");
+function simple_post()
+{
+    wp_enqueue_script('simple-post',  get_stylesheet_directory_uri() . '/components/post-type/post/post.js', array('jquery'), rand());
+    wp_enqueue_style('simple-post', get_stylesheet_directory_uri() . '/components/post-type/post/post.css', array(), rand());
+}
+add_action('wp_enqueue_scripts', 'simple_post', 999999);
 
 ///////////////////
 // Featured Card //
@@ -207,7 +217,6 @@ function my_remove_menu_pages()
         // global $user_ID;
         // if ( $user_ID != 1 ) { // use this to restric to user ID
 
-        remove_menu_page('edit.php'); // Posts
 
         $user = wp_get_current_user(); // getting & setting the current user 
         $roles = (array) $user->roles; // obtaining the role 

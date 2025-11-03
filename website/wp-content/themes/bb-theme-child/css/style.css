@@ -13,6 +13,10 @@
 ***************/
 
 
+/****************/
+/* Font Import */
+/***************/
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+Canadian+Aboriginal:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 /********************/
@@ -30,6 +34,7 @@
      --Number-Scale-Margins-Small-Desktop: 60px;
      --Number-Scale-Margins-Tablet: 36px;
      --Number-Scale-Margins-Mobile: 18px;
+     --content-margin-top: 16px;
 
      /* BORDER RADII */
     --border-radius-btn: 50px;
@@ -39,33 +44,30 @@
 
     /* CONTENT PADDING */
     --content-padding: 72px;
-    --content-margin-top: 26px;
     --content-padding-top: 200px;
-    --content-padding-bottom: 50px;
+    --content-padding-bottom: 0px;
     
     /* COLORS */
     --black: #000;
     --white: #fff;
-    --gray: #aaa;
-    --light: #ddd;
+
+    --green: #606A2F;
+    --tan-light: #E1D1B8;
     
-    --color1: #025C6E;
-    --color2: #C8EFE8;
+    --walnut: #442A1F;
+    --chestnut: #7E4D22;
+    --tan-dark: #B5894F;
+    --cream: #FCF3E6;
+    --gold: #E29C3D;
     
 
     /* FONTS */
-    --font-headline: 'Barlow',sans-serif;
-    --font-content: 'Barlow',sans-serif;
+    --font-headline: 'Lexend',sans-serif;
+    --font-content: 'Noto Sans',sans-serif;
 
     /* ICONS */
-    --arrow-white: url(/wp-content/uploads/arrow-right-white.svg);
-    --arrow-blue:  url(/wp-content/uploads/arrow-right-blue.svg);
-
-    --arrow: url(/wp-content/uploads/arrow.svg);
-    --arrow-diagonal: url(/wp-content/uploads/arrow-diagonal.svg);
-    --caret: url(/wp-content/uploads/caret.svg);
-    --minus: url(/wp-content/uploads/action-minus.svg);
-    --plus: url(/wp-content/uploads/action-plus.svg);
+    --arrow-black: url(/wp-content/uploads/Right-Arrow_Black.svg);
+    --arrow-gold:  url(/wp-content/uploads/Right-Arrow_Yellow.svg);
 
     --viewportWidth: calc(100vw - var(--scrollbarWidth));
 }
@@ -214,51 +216,49 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 h1, .h1, .h1 p, .h1 .fl-heading {
     font-family: var(--font-headline);
-    font-size: 88px;
-    font-size: 5.5rem;
+    font-size: 72px;
+    font-size: 4.5rem;
     font-style: normal;
-    font-weight: normal;
-    letter-spacing: 0;
-    line-height: 88px;
-    line-height: 5.5rem;
+    font-weight: 600;
+    line-height: 82px;
+    line-height: 5.13rem;
 }
 
 h2, .h2, .h2 p, .h2 .fl-heading {
     font-family: var(--font-headline);
-    font-size: 56px;
-    font-size: 3.5rem;
+    font-size: 60px;
+    font-size: 3.75rem;
     font-style: normal;
-    font-weight: normal;
-    line-height: 56px;
-    line-height: 3.5rem;
-    letter-spacing: 0;
+    font-weight: 600;
+    line-height: 72px;
+    line-height: 4.5rem;
 }
 
 h3, .h3, .h3 p, .h3 .fl-heading {
-    font-family: var(--font-content);
-    font-weight: 700;
-    font-size: 36px;
-    font-size: 2.25rem;
-    line-height: 42px; 
-    line-height: 2.63rem; 
+    font-family: var(--font-headline);
+    font-weight: 600;
+    font-size: 42px;
+    font-size: 2.63rem;
+    line-height: 47px;
+    line-height: 2.94rem;
 }
 
 h4, .h4, .h4 p, .h4 .fl-heading {
-    font-family: var(--font-content);
-    font-weight: 700;
-    font-size: 26px;
-    font-size: 1.63rem;
-    line-height: 34px;
-    line-height: 2.13rem;
+    font-family: var(--font-headline);
+    font-weight: 600;
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 36px;
+    line-height: 2.25rem;
 }
 
 h5, .h5, .h5 p, .h5 .fl-heading {
     font-family: var(--font-content);
-    font-weight: 700;
-    font-size: 22px;
-    font-size: 1.38rem;
-    line-height: 34px;
-    line-height: 2.13rem;
+    font-weight: 400;
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 36px;
+    line-height: 2.25rem;
 }
 
 p, .p, ul, ol {
@@ -267,7 +267,7 @@ p, .p, ul, ol {
     font-size: 1.13rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 29px; 
+    line-height: 29px;
     line-height: 1.81rem;
     margin: 0;
     text-wrap: pretty;
@@ -287,25 +287,25 @@ ol + p, ol + ul, ol + ol {
     font-size: 1.38rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 34px; 
+    line-height: 34px;
     line-height: 2.13rem; 
 }
 
 .small, p.small, p .small, .small p,
 .small ol, ol.small, .small ul, ul.small {
     font-family: var(--font-content);
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 17px;
+    font-size: 1.06rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px; 
-    line-height: 1.75rem; 
+    line-height: 26px; 
+    line-height: 1.63rem;
 }
 
 blockquote p {
     font-family: var(--font-content);
-    font-size: 25px;
-    font-size: 1.56rem;
+    font-size: 26px;
+    font-size: 1.63rem;
     font-style: normal;
     font-weight: 600;
     line-height: 37px;
@@ -317,6 +317,7 @@ blockquote {
     margin: 0;
     border: 0;
 }
+
 
 p a:not(.underline_anim), 
 ol a:not(.underline_anim), 
@@ -380,12 +381,21 @@ span.underline_anim:hover,
 /* Number Stat */
 .number_stat .fl-number-string {
     font-family: var(--font-headline);
-    font-size: 68px;
-    font-size: 4.25rem;
-    line-height: 68px;
-    line-height: 4.25rem;
+    font-size: 100px;
+    font-size: 6.25rem;
+    line-height: 110px;
+    line-height: 6.88rem;
+    font-weight: 600;
     font-style: normal;
-    font-weight: 700;
+}
+.number_stat .fl-number-after-text{
+    font-family: var(--font-content);
+    font-size: 18px;
+    font-size: 1.13rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    line-height: 1.81rem;
 }
 
 
@@ -397,8 +407,8 @@ span.underline_anim:hover,
 
 :root {
     /* --btn-icon-gap: var(--Sizing-Units-2XS); */
-    --btn-icon-gap: 10px;
-    --btn-icon-gap-hover: 20px;
+    --btn-icon-gap: 12px;
+    --btn-icon-gap-hover: 23px;
 }
 
 /* resets bb-theme skin */
@@ -407,22 +417,23 @@ a.fl-button *, a.fl-button:visited * {
 }
 
 /* default styles for all buttons */
+footer .fl-module-button a.fl-button,
 .fl-builder-content .fl-module-button a.fl-button,
 .fl-builder-content .fl-module-button-group a.fl-button,
 div.wpforms-container-full button.wpforms-submit,
 .button-branded {
-    font-family:var(--font-content);
-    font-size: 18px;
-    font-size: 1.13rem;
+    font-family:var(--font-headline);
+    font-size: 19px;
+    font-size: 1.19rem;
     font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    font-weight: 600;
+    line-height: 24px;
+    line-height: 1.5rem;
 }
 
 /* separates styles for buttons with backgrounds */
 .fl-module-button:not(.buttonlink) a.fl-button,
 .button-branded a.fl-button,
-div.wpforms-container-full .wpforms-form button.wpforms-submit,
 a.button-branded { 
     /* background: none; */
     padding: 20px 40px;
@@ -440,11 +451,11 @@ a.fl-button span {
 }
 
 .cta_button a.fl-button {
-    font-family: var(--font-content);
+    font-family: var(--font-headline);
     font-size: 19px;
     font-size: 1.19rem;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: normal;
     padding:20px 40px;
     border-radius: var(--border-radius-btn);
@@ -452,16 +463,6 @@ a.fl-button span {
     transition:all .15s ease;
 }
 
-.cta_button a.fl-button:after {
-    font-family: 'Font Awesome 5 Pro';
-    content:"\f178";
-    font-weight: 500;
-    padding-left: 10px;
-    position: relative;
-    top: 1px;
-    transition:all .25s ease;
-    display:inline-block;
-}
 
 a.uabb-creative-button {transition: all .25s ease;}
 
@@ -534,7 +535,7 @@ a.buttonlink {
     line-height: 1.75rem;
     font-weight: 700;
 }
-
+footer .buttonlink a.fl-button,
 .fl-builder-content .buttonlink a.fl-button,
 .fl-builder-content a.buttonlink {
     align-items: center;
@@ -542,11 +543,9 @@ a.buttonlink {
     border: none;
     border-radius: 0;
     display: inline-flex;
-    /* gap: 12px; */
     padding: 0;
     padding-bottom: 2px; /* extra spacing between text and underline */
     padding-right: var(--btn-icon-gap-hover); /* apply padding as far as the arrow goes, to avoid glitchiness on hover */
-
     text-decoration: none;
     background-image: linear-gradient(currentColor, currentColor);
     background-repeat: no-repeat;
@@ -554,11 +553,16 @@ a.buttonlink {
     background-size: calc(100% - var(--btn-icon-gap)) 1px; /* minus 12px for the icon's rest state */
     transition: background-size 250ms ease-in-out;
     display:inline;
-    font-weight:700;
+    font-weight:600;
+}
+footer .buttonlink.underline_gold a.fl-button,
+.fl-builder-content .buttonlink.underline_gold a.fl-button{
+    background-image: linear-gradient(var(--gold), var(--gold));
 }
 
+footer .buttonlink a.fl-button span,
 .fl-builder-content .buttonlink a.fl-button span {
-    display: inline-block;
+    display: inline;
 }
 
 .buttonlink .fl-button-wrap,
@@ -566,6 +570,7 @@ a.buttonlink {
     line-height: 0; /* removes odd extra gap below a */
 }
 
+footer .buttonlink a.fl-button:hover,
 .fl-builder-content .buttonlink a.fl-button:hover,
 .fl-builder-content a.buttonlink:hover {
     text-decoration: none;
@@ -589,19 +594,18 @@ a.buttonlink.arrow_right::after,
 button.buttonlink.arrow_left::before,
 button.buttonlink.arrow_right::after,
 .buttonlink.arrow_left a.fl-button span::before,
-.buttonlink.arrow_right a.fl-button span::after,
-button.wpforms-submit::after {   
+.buttonlink.arrow_right a.fl-button span::after{   
     content:"";
-    background-image: var(--arrow);
+    background-image: var(--arrow-gold);
     background-size:contain;
     background-repeat:no-repeat;
-    height: 13px; /* px won't scale, but rem is glitchy when button is scaled on hover */
+    height: 14px; /* px won't scale, but rem is glitchy when button is scaled on hover */
     /* height: 0.79rem; */
     position: relative;
     /* top: 5px;
     top: 0.31rem; */
-    transition: all .25s ease-in-out;;
-    width: 16px;
+    transition: all .25s ease-in-out;
+    width: 17px;
     /* width: 1rem; */
     display: inline-flex;
     /* transform: translateX(12px); */
@@ -612,6 +616,22 @@ button.wpforms-submit::after {
     mask: var(--arrow) no-repeat 0% 0%;
     -webkit-mask-size: contain;
     mask-size: contain; */
+}
+
+.arrow_right.arrow_black a.fl-button span::after{
+    content:"";
+    background-image: var(--arrow-black);
+    background-size:contain;
+    background-repeat:no-repeat;
+    height: 14px; /* px won't scale, but rem is glitchy when button is scaled on hover */
+    /* height: 0.79rem; */
+    position: relative;
+    /* top: 5px;
+    top: 0.31rem; */
+    transition: all .25s ease-in-out;;
+    width: 17px;
+    /* width: 1rem; */
+    display: inline-flex;
 }
 
 a.buttonlink.arrow_left::before,
@@ -656,10 +676,238 @@ button.arrow_white.arrow_right::after,
 .arrow_white.arrow_right a.fl-button span::after
 {background-image:var(--arrow-light);} */
 
+/****************/
+/****************/
+/*Text and Basic*/
+/****************/
+/****************/
 
+.mediumheight,
+.mediumheight .fl-module-content, 
+.mediumheight .fl-photo-content, 
+.mediumheight .fl-photo, 
+.mediumheight  img{
+    height:460px;
+    object-fit: cover;
+    width:100%;
+}
 
+/****Text - FAQ Full Width***/
 
+.fl-accordion-large .fl-accordion-button{
+    display: flex;
+    align-items: center;
+}
+.fl-accordion-large .fl-accordion-button-label, .fl-accordion-large .fl-accordion-button-icon{
+    margin-right:33px; /*this is half of the actual number between icon and title*/
+}
+.fl-accordion-button-icon-left, .fl-accordion-button-icon-right{
+    opacity: 1;
+}
+.fl-accordion-button .fl-accordion-button-icon:before{
+    transition: all .2s ease;
+}
+.fl-accordion-button .fl-accordion-button-icon.fa-plus:before{
+    content: '';
+    width:24px;
+    height: 24px;
+    background-image: url(/wp-content/uploads/Accordion-Open-Icon_Brown.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    transform: rotate(-180deg);
+}
+.fl-accordion-button .fl-accordion-button-icon.fa-minus:before{
+    content: '';
+    width:24px;
+    height: 24px;
+    background-image: url(/wp-content/uploads/Accordion-Close-Icon_Brown.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    transform: rotate(180deg);
+}
+.fl-accordion-large .fl-accordion-button-label{
+    font-family: var(--font-content);
+    font-size: 22px;
+    font-size: 1.38rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px;
+    line-height: 2.13rem;
+}
+.fl-post .fl-accordion-content img.alignnone[class*="wp-image-"]{
+    margin: 0;
+    width:100%;
+    border-radius: 16px;
+}
 
+/****Feature Card - 3 Column +  Split Background***/
+
+.icon-card .fl-col-content{
+    padding: 36px 36px 42px;
+    border-radius: 24px;
+    border-bottom: 24px solid var(--green);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
+    background-color: white;
+}
+
+/****Interactive Timeline***/
+.uabb-timeline-img{
+    margin-bottom: 36px!important
+}
+.uabb-timeline-img img{
+    width:100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+.uabb-timeline-heading{
+    margin-bottom: 0!important;
+}
+.uabb-timeline-date{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.uabb-timeline-date p{
+    font-family: var(--font-content);
+    color:var(--walnut)!important;
+    font-size: 22px;
+    font-size: 1.38rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 34px;
+    line-height: 2.13rem;
+}
+
+/****Hero - Image Frame Left***/
+
+.hero-img{
+    width:calc(100% - 100px);
+    margin-left:100px;
+}
+.hero-img .fl-photo-content,
+.fl-post .hero-img img,
+.hero-img img{
+    height:400px;
+    width:100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.hero-icon,
+.hero-icon .fl-photo-content,
+.fl-post .hero-icon img,
+.hero-icon img{
+    height:213px;
+    width: auto;
+    object-fit: contain;
+}
+
+body:not(.fl-builder-edit) .hero-icon{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    z-index: 1;
+}
+body:not(.fl-builder-edit) .hero-graph-col .fl-col-content{
+    position: relative;
+}
+
+.full-width-svg img{
+    width:100%;
+}
+
+.footer-signup-row .hero-img{
+    margin-right:100px;
+    margin-left:0;
+}
+body:not(.fl-builder-edit) .footer-signup-row .hero-icon{
+    right: 0;
+    left:unset;
+}
+/* WPForm */
+
+html .wpforms-container .wpforms-field{
+    padding-top:0;
+    padding-bottom: 0;
+}
+html div.wpforms-container-full .wpforms-field-label{
+    margin-bottom: 4px;
+    color: var(--white);
+    font-family: var(--font-content);
+    font-size: 17px;
+    font-size: 1.06rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px;
+    line-height: 1.81rem;
+}
+html .wpforms-container .wpforms-required-label{
+    margin-bottom: 4px;
+    color: var(--gold);
+    font-family: var(--font-content);
+    font-size: 17px;
+    font-size: 1.06rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px;
+    line-height: 1.81rem;
+}
+html .wpforms-container .wpforms-field-container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+html div.wpforms-container-full input[type=email],
+html div.wpforms-container-full input[type=text],
+html div.wpforms-container-full .wpforms-form textarea{
+    font-family: var(--font-content);
+    color:var(--black);
+    font-size: 17px;
+    font-size: 1.06rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    line-height: 1.81rem;
+    height: 60px;
+    border: none!important;
+    padding: 16px 20px;
+    border-radius: 14px;
+}
+html .wpforms-container em.wpforms-error{
+    font-family: var(--font-content);
+}
+html div.wpforms-container-full .wpforms-form .wpforms-submit-container{
+    margin-top:24px;
+}
+html div.wpforms-container-full button[type=submit]{
+    height:unset;
+    background-color: var(--gold)!important;
+    padding: 15px 25px;
+    color: var(--black)!important;
+    font-family: var(--font-headline);
+    font-size: 19px;
+    font-size: 1.19rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    line-height: 1.5rem;
+    background-image:none!important;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+html div.wpforms-container-full button[type=submit]:focus:after{
+    display: none;
+}
+html div.wpforms-container-full button[type=submit]:hover{
+    transform: scale(1.05);
+}
+html div.wpforms-container-full:not(:empty){
+    margin-bottom:0;
+}
 /**************/
 /**************/
 /* Responsive */
@@ -689,17 +937,31 @@ button.arrow_white.arrow_right::after,
     .fullwidth.marginleft >  div, .fullwidth .marginleft  { padding-left:  var(--content-padding);}
     .fullwidth.marginright > div, .fullwidth .marginright { padding-right: var(--content-padding);} 
 
+    /****Hero - Image Frame Left***/
 
-    /* Number Stat */
-    .number_stat .fl-number-string {
-        font-size: 64px;
-        font-size: 4rem;
-        line-height: 64px;
-        line-height: 4rem;
+    .hero-img{
+        width: calc(100% - 100px);
+        max-width: 700px;
+        margin-left:100px;
     }
 
+    .hero-row .fl-col-group{
+        flex-direction: column-reverse;
+        gap: 66px;
+    }
 
-
+    .hero-row.footer-signup-row .fl-col-group{
+        flex-direction: row;
+        gap: 66px;
+        flex-wrap: nowrap;
+    }
+    .footer-signup-row div.wpforms-container .wpforms-form .wpforms-field-layout .wpforms-layout-row{
+        flex-direction: column;
+        gap:12px;
+    }
+    .footer-signup-row div.wpforms-container .wpforms-form .wpforms-field-layout .wpforms-layout-column-50{
+        width:100%;
+    }
 }
 
   
@@ -724,38 +986,35 @@ button.arrow_white.arrow_right::after,
     }
 
     h2, .h2, .h2 p, .h2 .fl-heading {
-        font-size: 50px;
-        font-size: 3.13rem;
-        line-height: 50px;
-        line-height: 3.13rem;
+        font-size: 52px;
+        font-size: 3.25rem;
+        line-height: 58px;
+        line-height: 3.63rem;
     }
 
     h3, .h3, .h3 p, .h3 .fl-heading {
-        font-size: 30px;
-        font-size: 1.88rem;
-        line-height: 36px;
-        line-height: 2.25rem;
+        font-size: 36px;
+        font-size: 2.25rem;
+        line-height: 44px;
+        line-height: 2.75rem;
     }
 
     h4, .h4, .h4 p, .h4 .fl-heading {
-        font-size: 24px;
-        font-size: 1.5rem;
-        line-height: 30px;
-        line-height: 1.88rem;
+        font-size: 27px;
+        font-size: 1.69rem;
+        line-height: 34px;
+        line-height: 2.13rem;
     }
 
     h5, .h5, .h5 p, .h5 .fl-heading {
-        font-size: 21px;
-        font-size: 1.31rem;
-        line-height: 33px;
-        line-height: 2.06rem;
+        font-size: 27px;
+        font-size: 1.69rem;
+        line-height: 34px;
+        line-height: 2.13rem;
     }
 
     p, .p, ul, ol {
-        font-size: 18px;
-        font-size: 1.13rem;
-        line-height: 29px;
-        line-height: 1.81rem;
+        /**no change for tablet**/
     }
 
     .large, p.large, p .large, .large p,
@@ -768,20 +1027,45 @@ button.arrow_white.arrow_right::after,
 
     .small, p.small, p .small, .small p,
     .small ol, ol.small, .small ul, ul.small {
-        font-size: 16px;
-        font-size: 1rem;
-        line-height: 28px;
-        line-height: 1.75rem;
+        font-size: 17px;
+        font-size: 1.06rem;
+        line-height: 26px;
+        line-height: 1.63rem;
     }
 
     blockquote p {
-        font-size: 23px;
-        font-size: 1.44rem;
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 35px;
+        line-height: 2.19rem;
+    }
+    /* Number Stat */
+    .number_stat .fl-number-string {
+        font-size: 80px;
+        font-size: 5rem;
+        line-height: 95px;
+        line-height: 5.94rem;
+    }
+
+    .fl-module-button:not(.buttonlink) a.fl-button,
+    .button-branded a.fl-button,
+    div.wpforms-container-full .wpforms-form button.wpforms-submit,
+    a.button-branded{
+        padding: 13px 26px;
+    }
+
+    .fl-accordion-large .fl-accordion-button-label{
+        font-size: 21px;
+        font-size: 1.31rem;
         line-height: 33px;
         line-height: 2.06rem;
     }
- 
 
+    /****Hero - Image Frame Left***/
+    .footer-signup-row .hero-graph-col{
+        max-width: 700px;
+        margin-left:0;
+    }
 }
 
 
@@ -792,7 +1076,9 @@ button.arrow_white.arrow_right::after,
 
         --content-padding: 18px;
         --content-padding-top: 16px;
-        --content-padding-bottom: 16px;
+        --content-padding-bottom: 16px; 
+        --btn-icon-gap: 8px;
+        --btn-icon-gap-hover: 15px;
     }
 
 
@@ -803,55 +1089,182 @@ button.arrow_white.arrow_right::after,
     h1, .h1, .h1 p, .h1 .fl-heading {
         font-size: 50px;
         font-size: 3.13rem;
-        line-height: 50px;
-        line-height: 3.13rem;
+        line-height: 59px;
+        line-height: 3.69rem;
     }
 
     h2, .h2, .h2 p, .h2 .fl-heading {
-        font-size: 40px;
-        font-size: 2.5rem;
-        line-height: 40px;
-        line-height: 2.5rem;
+        font-size: 42px;
+        font-size: 2.63rem;
+        line-height: 48px;
+        line-height: 3rem;
     }
 
     h3, .h3, .h3 p, .h3 .fl-heading {
-        font-size: 28px;
-        font-size: 1.75rem;
-        line-height: 36px;
-        line-height: 2.25rem;
+        font-size: 34px;
+        font-size: 2.13rem;
+        line-height: 38px;
+        line-height: 2.38rem;
+    }
+    
+    h4, .h4, .h4 p, .h4 .fl-heading {
+        font-size: 26px;
+        font-size: 1.63rem;
+        line-height: 33px;
+        line-height: 2.06rem;
     }
 
     h5, .h5, .h5 p, .h5 .fl-heading {
-        font-size: 20px;
-        font-size: 1.25rem;
-        line-height: 31px;
-        line-height: 1.94rem;
+        font-size: 26px;
+        font-size: 1.63rem;
+        line-height: 33px;
+        line-height: 2.06rem;
+    }
+
+    p, .p, ul, ol {
+        /**no change for mobile**/
     }
 
     .large, p.large, p .large, .large p,
     .large ol, ol.large, .large ul, ul.large {
         font-size: 20px;
         font-size: 1.25rem;
+        line-height: 30px;
+        line-height: 1.88rem;
+    }
+
+    .small, p.small, p .small, .small p,
+    .small ol, ol.small, .small ul, ul.small {
+        font-size: 17px;
+        font-size: 1.06rem;
+        line-height: 26px;
+        line-height: 1.63rem;
+    }
+
+    blockquote p {
+        font-size: 22px;
+        font-size: 1.38rem;
         line-height: 31px;
         line-height: 1.94rem;
     }
 
-    blockquote p {
-        font-size: 20px;
-        font-size: 1.25rem;
-        line-height: 29px;
-        line-height: 1.81rem;
-    }
-
     /* Number Stat */
     .number_stat .fl-number-string {
-        font-size: 52px;
-        font-size: 3.25rem;
-        line-height: 55px;
-        line-height: 3.44rem;
+        font-size: 60px;
+        font-size: 3.75rem;
+        line-height: 70px;
+        line-height: 4.38rem;
+    }
+
+    /* Text & Basic */
+    .mediumheight,
+    .mediumheight .fl-module-content, 
+    .mediumheight .fl-photo-content,
+    .mediumheight .fl-photo, 
+    .mediumheight  img{
+        height:280px;
+    }
+
+    /****Text - FAQ Full Width***/
+
+    .fl-accordion-large .fl-accordion-button-label, .fl-accordion-large .fl-accordion-button-icon{
+        margin-right:13px; /*this is half of the actual number between icon and title*/
+    }
+    .fl-accordion-large p + p,
+    .fl-accordion-large  p + ul,
+    .fl-accordion-large  p + ol,
+    .fl-accordion-large  p + blockquote,
+    .fl-accordion-large  blockquote + p,
+    .fl-accordion-large  ul + p, ul + ul,
+    .fl-accordion-large  ul + ol, ol + p,
+    .fl-accordion-large  ol + ul,
+    .fl-accordion-large  ol + ol {
+        margin-top: 16px;
+    }
+    .fl-accordion-large .fl-accordion-button-label{
+        font-size: 20px;
+        font-size: 1.25rem;
+        line-height: 30px;
+        line-height: 1.88rem;
+    }
+
+    /****Feature Card - 3 Column +  Split Background***/
+
+    .icon-card .fl-col-content{
+        padding: 26px 16px 44px!important;
+        border-radius: 16px;
+    }
+
+    /****Interactive Timeline***/
+
+    .uabb-timeline-vertical.uabb-timeline--center .uabb-timeline-module.uabb-timeline-right {
+        -webkit-flex-direction: row;
+    }
+    
+    .uabb-timeline-vertical.uabb-timeline--center .uabb-day-new,
+    .uabb-timeline-vertical.uabb-timeline--center .uabb-timeline-date-new,
+    .uabb-timeline-vertical.uabb-timeline--center .uabb-timeline-left .uabb-day-new,
+    .uabb-timeline-vertical.uabb-timeline--center .uabb-timeline-right .uabb-day-new {
+        -webkit-box-ordinal-group: 1;
+        order: 1;
+        flex-basis: auto;
+        margin-left: 38px;
+    }
+
+    .uabb-timeline-vertical.uabb-timeline--center .uabb-timeline-date-new {
+        display: none !important;
+    }
+    
+    .uabb-timeline-vertical.uabb-timeline--center .uabb-timeline-marker-wrapper {
+        -webkit-box-ordinal-group: 0;
+        order: 0;
+        margin: 0;
+    }
+    
+    .uabb-timeline-vertical.uabb-timeline--center .uabb-timeline__line {
+        left: 10px;
+    }
+
+    .uabb-timeline-vertical.uabb-timeline--center .uabb-day-right .uabb-timeline-arrow {
+        left: 0;
+        right: 0;
+        transform: translateY(-50%) scaleX(-1);
+    }
+    .uabb-timeline-vertical.uabb-timeline--center .uabb-timeline-right .uabb-day-new{
+        padding-left: 12px;
+        padding-right: 0;
+    }
+    .uabb-timeline-img{
+        margin-bottom: 16px!important
     }
 
 
+    /****Hero - Image Frame Left***/
 
+    .hero-img{
+        width: calc( 100% - 64px);
+        max-width: 275px;
+        margin-left:64px;
+    }
+    .hero-img .fl-photo-content, 
+    .fl-post .hero-img img,
+    .hero-img img{
+        height: 213px;
+    }
+    .hero-row .fl-col-group.fl-col-group-equal-height{
+        flex-direction: column-reverse;
+        gap: 36px;
+        display: flex;
+    }
+    .hero-icon, 
+    .hero-icon .fl-photo-content, 
+    .fl-post .hero-icon img,
+    .hero-icon img{
+        height:132px;
+    }
 
+    .footer-signup-row .hero-graph-col{
+        max-width: 338px;
+        margin-left:0;
+    }
 }

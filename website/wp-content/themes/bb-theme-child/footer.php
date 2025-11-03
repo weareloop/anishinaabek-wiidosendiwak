@@ -34,7 +34,7 @@
                             <div class="footer_col col1">
                             <?php
                                 if ($footer_row1col1['footer_row1col1_title']) {
-                                    ?><h3><?=$footer_row1col1['footer_row1col1_title'];?></h3><?php
+                                    ?><h3 class='h2'><?=$footer_row1col1['footer_row1col1_title'];?></h3><?php
                                 }
                                 if ($footer_row1col1['footer_row1col1_cont']) {
                                     ?><?=$footer_row1col1['footer_row1col1_cont'];?><?php

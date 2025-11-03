@@ -1,0 +1,27 @@
+/********************/
+/********************/
+/** Rows & Modules **/
+/*** Image Video  ***/
+/********************/
+/********************/
+
+/*********/
+/*General*/
+/*********/
+.vp-sidedock{
+    display: none!important;
+}
+
+@media screen and (max-width: 1366px) {
+    
+
+}
+@media only screen and (max-width: 992px) {
+    
+    
+}
+@media only screen and (max-width: 768px) {
+    
+    
+
+}

@@ -13,7 +13,8 @@ jQuery(document).ready(function ($) {
             })
         },500)
     }
-    
+
+
     if ( $('.floating-img').length > 0 ) {
 
         radius_set()
@@ -82,7 +83,8 @@ jQuery(document).ready(function ($) {
             });
         };
     };
-
+    
+    
 
     $(window).on( "resize", function() {
 
