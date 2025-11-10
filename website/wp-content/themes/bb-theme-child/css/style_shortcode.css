@@ -71,6 +71,18 @@ body:not(.fl-builder-edit) .height100vh:not(.fl-row) {
 .fl-builder-content .marginauto_top {margin-top:auto;float:none}
 .fl-builder-content .marginleft {margin-left:0;float:none}
 .fl-builder-content .displaynone {display:none;}
+.fl-builder-content .marginbottom_minus1 {margin-bottom:-1px;}
+.fl-builder-content .margintop_minus1 {margin-top:-1px;}
+.fl-builder-content .marginbottom_minus2 {margin-bottom:-2px;}
+.fl-builder-content .margintop_minus2 {margin-top:-2px;}
+.fl-builder-content .marginbottom_minus3 {margin-bottom:-3px;}
+.fl-builder-content .margintop_minus3 {margin-top:-3px;}
+.fl-builder-content .marginbottom_minus4 {margin-bottom:-4px;}
+.fl-builder-content .margintop_minus4 {margin-top:-4px;}
+.fl-builder-content .marginbottom_minus5 {margin-bottom:-5px;}
+.fl-builder-content .margintop_minus5 {margin-top:-5px;}
+
+
 .fl-builder-content .floatleft {float:left}
 .fl-builder-content .floatright {float:right}
 .fl-builder-content .textaligncenter {text-align:center}

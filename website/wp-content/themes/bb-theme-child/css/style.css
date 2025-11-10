@@ -44,7 +44,7 @@
 
     /* CONTENT PADDING */
     --content-padding: 72px;
-    --content-padding-top: 200px;
+    --content-padding-top: 0px;
     --content-padding-bottom: 0px;
     
     /* COLORS */
@@ -246,15 +246,6 @@ h3, .h3, .h3 p, .h3 .fl-heading {
 h4, .h4, .h4 p, .h4 .fl-heading {
     font-family: var(--font-headline);
     font-weight: 600;
-    font-size: 32px;
-    font-size: 2rem;
-    line-height: 36px;
-    line-height: 2.25rem;
-}
-
-h5, .h5, .h5 p, .h5 .fl-heading {
-    font-family: var(--font-content);
-    font-weight: 400;
     font-size: 32px;
     font-size: 2rem;
     line-height: 36px;
@@ -476,6 +467,17 @@ a.button-branded:hover,
 a.button-branded:focus {
     /* transform: scale(1.05); */
     transform: scale3d(1.05, 1.05, 1.05); /* testing performance of scale on hover */
+}
+
+/* sets hover state for most buttons */
+.cta_button a.fl-button:hover span::after,
+.cta_button a.fl-button:focus span::after,
+.fl-module-button:not(.buttonlink) a.fl-button:hover span::after,
+.fl-module-button:not(.buttonlink) a.fl-button:focus span::after,
+/* div.wpforms-container-full button.wpforms-submit:hover, */
+a.button-branded:hover span::after,
+a.button-branded:focus span::after {
+    margin-left: 10px;
 }
 
 /* sets default transition for most buttons */
@@ -727,7 +729,7 @@ button.arrow_white.arrow_right::after,
     background-repeat: no-repeat;
     background-position: center;
     display: block;
-    transform: rotate(180deg);
+    transform: rotate(0deg);
 }
 .fl-accordion-large .fl-accordion-button-label{
     font-family: var(--font-content);
@@ -751,7 +753,7 @@ button.arrow_white.arrow_right::after,
     border-radius: 24px;
     border-bottom: 24px solid var(--green);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
-    background-color: white;
+    /* background-color: white; */
 }
 
 /****Interactive Timeline***/
@@ -779,6 +781,41 @@ button.arrow_white.arrow_right::after,
     font-weight: 700;
     line-height: 34px;
     line-height: 2.13rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+    .uabb-timeline-main .uabb-day-right {
+        animation: slide-in-right ease;
+        animation-timeline: view(); 
+        animation-range: entry 0% cover 40%; 
+    }
+    .uabb-timeline-main .uabb-day-left {
+        animation: slide-in-left ease;
+        animation-timeline: view(); 
+        animation-range: entry 0% cover 40%; 
+    }
+
+    @keyframes slide-in-right {
+    from { 
+            transform: translateX(-500px); 
+            opacity:0;
+        }
+        to { 
+            transform: translateX(0px); 
+            opacity:1;
+        }
+    }
+    @keyframes slide-in-left {
+    from { 
+            transform: translateX(500px); 
+            opacity:0;
+        }
+        to { 
+            transform: translateX(0px); 
+            opacity:1;
+        }
+    }
 }
 
 /****Hero - Image Frame Left***/
@@ -813,6 +850,7 @@ body:not(.fl-builder-edit) .hero-icon{
 }
 body:not(.fl-builder-edit) .hero-graph-col .fl-col-content{
     position: relative;
+
 }
 
 .full-width-svg img{
@@ -908,6 +946,35 @@ html div.wpforms-container-full button[type=submit]:hover{
 html div.wpforms-container-full:not(:empty){
     margin-bottom:0;
 }
+
+
+
+.featured_cards_wrapper .tag-resource-card {
+    background:var(--chestnut);
+    color:var(--white);
+    border-radius:100px;
+}
+
+.featured_cards_item {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.20);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**************/
 /**************/
 /* Responsive */
@@ -949,6 +1016,16 @@ html div.wpforms-container-full:not(:empty){
         flex-direction: column-reverse;
         gap: 66px;
     }
+
+    body:not(.fl-builder-edit) .hero-graph-col {
+        justify-content: center;
+    }
+    body:not(.fl-builder-edit) .hero-graph-col .fl-col-content{
+        align-items: center;
+        width: calc(100% - 100px);
+        max-width: 700px;
+    }
+    
 
     .hero-row.footer-signup-row .fl-col-group{
         flex-direction: row;
@@ -1075,8 +1152,8 @@ html div.wpforms-container-full:not(:empty){
     :root {
 
         --content-padding: 18px;
-        --content-padding-top: 16px;
-        --content-padding-bottom: 16px; 
+        --content-padding-top: 0;
+        --content-padding-bottom: 0; 
         --btn-icon-gap: 8px;
         --btn-icon-gap-hover: 15px;
     }
@@ -1162,7 +1239,8 @@ html div.wpforms-container-full:not(:empty){
     .mediumheight .fl-photo-content,
     .mediumheight .fl-photo, 
     .mediumheight  img{
-        height:280px;
+        max-height:280px;
+        height:initial;
     }
 
     /****Text - FAQ Full Width***/
@@ -1208,7 +1286,7 @@ html div.wpforms-container-full:not(:empty){
         -webkit-box-ordinal-group: 1;
         order: 1;
         flex-basis: auto;
-        margin-left: 38px;
+        margin-left: 6px;
     }
 
     .uabb-timeline-vertical.uabb-timeline--center .uabb-timeline-date-new {
@@ -1263,8 +1341,24 @@ html div.wpforms-container-full:not(:empty){
         height:132px;
     }
 
+    body:not(.fl-builder-edit) .hero-graph-col .fl-col-content {
+        max-width: 340px;
+    }
+
     .footer-signup-row .hero-graph-col{
         max-width: 338px;
         margin-left:0;
     }
+
+    @media (prefers-reduced-motion: no-preference) {
+
+        .uabb-timeline-main .uabb-day-right {
+            animation: slide-in-left ease;
+            animation-timeline: view(); 
+            animation-range: entry 0% cover 40%; 
+        }
+        
+    }
+
+
 }

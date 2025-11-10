@@ -426,7 +426,8 @@ body:not(.fl-builder-edit) .nofocus:focus {box-shadow:initial !important}
     margin-top: 9px;
     flex-shrink: 0;
 }
-#menu-main .menu-desktop >li.has_submenu:not(.button) >button:after {
+#menu-main .menu-desktop >li.has_submenu:not(.button) >button:after,
+#menu-main .menu-desktop >li:not(.button,.mainmenu_home) >a:after {
     content: '';
     width:0%;
     height:5px;
@@ -437,11 +438,15 @@ body:not(.fl-builder-edit) .nofocus:focus {box-shadow:initial !important}
     transition: all 0.2s ease;
 }
 #menu-main .menu-desktop >li.has_submenu:not(.button) >button[aria-expanded="true"]:after,
-#menu-main .menu-desktop >li.has_submenu:not(.button):hover >button:after {
+#menu-main .menu-desktop >li.has_submenu:not(.button):hover >button:after,
+#menu-main .menu-desktop >li:not(.button):hover >a:after {
     width:100%;
 }
 
-
+#menu-main .menu-desktop >li.has_submenu.button button {transition:all .25s ease;}
+#menu-main .menu-desktop >li.has_submenu.button button:hover {
+    transform:scale(1.1);
+}
 
 .menu_main_out header.fl-page-header {
     transform:translateY(-128px);
@@ -721,12 +726,12 @@ footer .cta_button a{
     :root {
         /* --header-height: 100px; */
         --content-padding:36px;
-        --content-padding-top:100px;
+        --content-padding-top:0;
     }
     header.fl-page-header {
         padding-top:20px;
-        padding-left: 22px;
-        padding-right:22px;
+        padding-left: 18px;
+        padding-right:18px;
     }
     header.fl-page-header .header_inner {
         padding: 0;
@@ -785,7 +790,7 @@ footer .cta_button a{
         background: url(/wp-content/uploads/Group-11213.svg) center right / contain no-repeat;
         width: 50px;
         height: 31px;
-        transform: rotate(180deg) translate(-5px, -2px);
+        transform: rotate(360deg) translate(-5px, 3px);
     }
 
     #menu-main .sub-menu .mainmenu_item {
@@ -1052,7 +1057,7 @@ footer .cta_button a{
     :root {
         --header-height: 60px;
         --content-padding:18px;
-        --content-padding-top:80px;
+        --content-padding-top:0;
     }
 
 
