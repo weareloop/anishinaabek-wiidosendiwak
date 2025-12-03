@@ -10,55 +10,6 @@
 .basic-cta-card-box > .fl-module-box{
     flex-basis: calc(33% - 44px);
 }
-/*
-    ===================
-            FAQ
-    ===================
-*/
-
-.fl-accordion-button{
-    display: flex;
-    align-items: center;
-}
-
-.fl-builder-content .fl-accordion-button a.fl-accordion-button-icon{
-    opacity: 1;
-}
-
-.fl-accordion-button-icon-left{
-    margin-inline-end: 18px;
-}
-
-.fl-accordion-button-icon-right{
-    margin-inline-start: 18px;
-}
-
-.fl-builder-content .fl-accordion-button .fl-accordion-button-icon i{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.fl-builder-content .fl-accordion-button i.fl-accordion-button-icon.fa-minus::before {
-    background: url(/wp-content/uploads/minus-icon.svg) center center / contain no-repeat;
-    transition: all 0.25s ease;
-    content: "";
-    width: 21px;
-    height: 21px;
-    background-size: cover;
-    display: inline-block;
-}
-
-.fl-builder-content .fl-accordion-button i.fl-accordion-button-icon.fa-plus::before {
-    background: url(/wp-content/uploads/plus-icon.svg) center center / contain no-repeat;
-    transform: rotate(180deg);
-    transition: all 0.25s ease;
-    content: "";
-    width: 21px;
-    height: 21px;
-    background-size: cover;
-    display: inline-block;
-}
 @media screen and (max-width: 1366px) {
     /*
     ===================

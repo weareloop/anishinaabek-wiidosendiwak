@@ -287,7 +287,7 @@ jQuery(document).ready(function( $ ) {
         
         if ($(window).width()>993)  scroll_offset = 100
         else scroll_offset = 0
-        if ($(window).scrollTop()<scroll_offset) $("body").removeClass("menu_main_out")
+        if ($(window).scrollTop()<=scroll_offset) $("body").removeClass("menu_main_out")
 
         // SlideUp all opened submenues
         $(".has_submenu >button").attr("aria-expanded","false")

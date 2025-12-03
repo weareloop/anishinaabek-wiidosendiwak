@@ -11,7 +11,7 @@
 	do_action( 'fl_after_content' );
 ?>
 
-<footer class="fl-page-footer-wrap"<?php FLTheme::print_schema( ' itemscope="itemscope" itemtype="https://schema.org/WPFooter"' ); ?>>
+<footer id="share-your-thoughts" class="fl-page-footer-wrap"<?php FLTheme::print_schema( ' itemscope="itemscope" itemtype="https://schema.org/WPFooter"' ); ?>>
     <h2 class="sr-only">Footer</h2>
     
     <div class="footer_row_wrapper mainfooter">

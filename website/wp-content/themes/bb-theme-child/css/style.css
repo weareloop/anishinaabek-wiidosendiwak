@@ -213,7 +213,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     margin-top: 0px;
     margin-bottom: 0px;
 }
-
+h1.small{
+    font-family: var(--font-headline);
+    font-size: 72px;
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 82px;
+    line-height: 5.13rem;
+}
 h1, .h1, .h1 p, .h1 .fl-heading {
     font-family: var(--font-headline);
     font-size: 72px;
@@ -683,13 +691,28 @@ button.arrow_white.arrow_right::after,
 /*Text and Basic*/
 /****************/
 /****************/
-
+.mediumheight {
+    position: sticky;
+    top: 16px;
+}
 .mediumheight,
 .mediumheight .fl-module-content, 
 .mediumheight .fl-photo-content, 
 .mediumheight .fl-photo, 
+.fl-post .mediumheight img[class*="wp-image-"],
 .mediumheight  img{
     height:460px;
+    object-fit: cover;
+    width:100%;
+}
+
+.height600,
+.height600 .fl-module-content, 
+.height600 .fl-photo-content, 
+.height600 .fl-photo, 
+.fl-post .height600 img[class*="wp-image-"],
+.height600  img {
+    height:600px;
     object-fit: cover;
     width:100%;
 }
@@ -844,7 +867,7 @@ button.arrow_white.arrow_right::after,
 
 body:not(.fl-builder-edit) .hero-icon{
     position: absolute;
-    bottom: 0;
+    top: 200px;
     left:0;
     z-index: 1;
 }
@@ -961,10 +984,27 @@ html div.wpforms-container-full:not(:empty){
 
 
 
+div.wpforms-container-full .wpforms-confirmation-container-full p, 
+div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirection-message) p{
+    color: #fff!important;
+    font-family: var(--font-content);
+    font-size: 18px;
+    font-size: 1.13rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    line-height: 1.81rem;
+}
+div.wpforms-container-full .wpforms-confirmation-container-full, 
+div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirection-message){
+    background: transparent!important;
+    padding: 0!important;
+    border: none!important;
+}
 
-
-
-
+.marginbottom_minus1.nopadding img{
+    transform: scale(1.01);
+}
 
 
 
@@ -1054,6 +1094,13 @@ html div.wpforms-container-full:not(:empty){
     /**************/
     /* TYPOGRAPHY */
     /**************/
+
+    h1.small{
+        font-size: 66px;
+        font-size: 4.13rem;
+        line-height: 70px;
+        line-height: 4.38rem;
+    }
 
     h1, .h1, .h1 p, .h1 .fl-heading {
         font-size: 66px;
@@ -1162,7 +1209,12 @@ html div.wpforms-container-full:not(:empty){
     /**************/
     /* TYPOGRAPHY */
     /**************/
-
+    h1.small{
+        font-size: 42px;
+        font-size: 2.63rem;
+        line-height: 48px;
+        line-height: 3rem;
+    }
     h1, .h1, .h1 p, .h1 .fl-heading {
         font-size: 50px;
         font-size: 3.13rem;
@@ -1237,8 +1289,18 @@ html div.wpforms-container-full:not(:empty){
     .mediumheight,
     .mediumheight .fl-module-content, 
     .mediumheight .fl-photo-content,
+    .fl-post .mediumheight img[class*="wp-image-"],
     .mediumheight .fl-photo, 
     .mediumheight  img{
+        max-height:280px;
+        height:initial;
+    }
+    .height600,
+    .height600 .fl-module-content, 
+    .height600 .fl-photo-content, 
+    .height600 .fl-photo, 
+    .fl-post .height600 img[class*="wp-image-"],
+    .height600  img {
         max-height:280px;
         height:initial;
     }
@@ -1319,6 +1381,13 @@ html div.wpforms-container-full:not(:empty){
 
     /****Hero - Image Frame Left***/
 
+    body:not(.fl-builder-edit) .hero-icon{
+        top: 80px;
+    }
+    .footer-signup-row .hero-img {
+        margin-right: 64px;
+        margin-left: 0;
+    }
     .hero-img{
         width: calc( 100% - 64px);
         max-width: 275px;

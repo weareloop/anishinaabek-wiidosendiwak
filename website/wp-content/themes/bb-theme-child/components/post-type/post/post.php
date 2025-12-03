@@ -42,6 +42,7 @@ function post_module() {
 
     $posts = get_posts($args);
 ?>
+    <h3 class='loading'>Loading<span>.</span><span>.</span><span>.</span></h3>
     <div class='post-lists'>
 <?php
     foreach($posts as $key=>$post){

@@ -18,9 +18,10 @@ jQuery(document).ready(function ($) {
                 $('.post-lists').css("opacity", 0);
                 $('.post-lists').css("max-height","0px");
                 $('button.cat-btn').removeClass('active');
+                $('.loading').css("display", 'block');
             },
             complete:function() {
-                
+                $('.loading').css("display", 'none');
             },
             success: function(res) {
                 console.log("success");

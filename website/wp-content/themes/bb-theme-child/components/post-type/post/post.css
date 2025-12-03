@@ -4,8 +4,34 @@
     transition: all ease 0.2s;
     overflow: hidden;
 }
+.loading{
+    display:none;
+    margin-bottom: 20px;
+    text-align:center;
+}
+.loading span{
+    position: relative;
+    animation-name: loading;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+}
+.loading span:first-child{
+    animation-delay: 0;
+}
+.loading span:nth-child(2){
+    animation-delay: .1s;
+}
+.loading span:nth-child(3){
+    animation-delay: .2s;
+}
+@keyframes loading {
+  0% {top: 0;}
+  50% {top: -10px;}
+  100% {top: 0;}
+}
 .post-list.active{
     display: flex;
+    cursor: pointer;
 }
 .post-list{
     display: none;
